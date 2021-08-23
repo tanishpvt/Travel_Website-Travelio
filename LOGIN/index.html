@@ -11,6 +11,7 @@
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+<!-- database -->
 
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
@@ -30,13 +31,13 @@
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" id="email" />
+              <input type="text" placeholder="Email" id="mail" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" id="password" />
+              <input type="password" placeholder="Password" />
             </div>
-            <input type="submit" value="Login" class="btn solid" />
+            <input type="submit" onClick="signIn()" id="signin" value="Login" class="btn solid" />
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a href="" class="social-icon">
@@ -120,10 +121,7 @@
             </button>
           </div>
 
-
-
-       
-
+          
           <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
  
           <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_Cqp4Yg/satetraveling.json"
@@ -135,6 +133,7 @@
       </div>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
