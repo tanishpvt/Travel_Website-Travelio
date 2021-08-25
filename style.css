@@ -326,7 +326,7 @@ section{
 
 /* offer section */
 .carousel-item {
-	height: 50vh;
+	height: 60vh;
 	min-height: 300px;
 }
 .carousel-caption {
@@ -337,7 +337,7 @@ section{
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	margin-top: 25px;
-	font-family: merienda;
+	/* font-family: merienda; */
 }
 .carousel-caption p {
 	width: 60%;
@@ -348,7 +348,7 @@ section{
 }
 .carousel-caption a {
 	text-transform: uppercase;
-	background: #262626;
+	background: #080000;
 	padding: 10px 30px;
 	display: inline-block;
 	color: #fff;
@@ -368,19 +368,19 @@ section{
 	*/
 
 
-  /* card section */
+  /* card section  temporaily disabled*/
 
-  i.icon-2x {
+  /* i.icon-2x {
     font-size: 30px;
   }
   
   .color-light{
       color:#FFFFFF;
   }
-  
+   */
   /*Colored Content Boxes
   ------------------------------------*/
-  .servive-block {
+  /* .servive-block {
     padding: 20px 30px;
     text-align: center;
     margin-bottom: 20px;
@@ -426,6 +426,8 @@ section{
   }
   .servive-block-grey {
     background: #95a5a6;
+    background: url(/ALL_MAGE/giftcard1.JPG);
+    background-size:cover;
   }
   .servive-block-yellow {
     background: #f1c40f;
@@ -456,7 +458,7 @@ section{
   }
   .servive-block-light {
     background: #ecf0f1;
-  }
+  } */
 
 
 
@@ -581,6 +583,100 @@ section{
     color: #3f43fd;
 }
   /* end timeline section events */
+
+
+
+  /* testing */
+
+  body{margin-top:20px;}
+.container-filter {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 30px;
+  padding: 0;
+  text-align: center;
+}
+
+.container-filter li {
+  list-style: none;
+  display: inline-block;
+}
+
+.container-filter a {
+  display: block;
+  font-size: 14px;
+  margin: 10px 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 30px;
+  -webkit-transition: all 0.6s;
+  border-bottom: 1px solid transparent;
+  color: #807c7c !important;
+}
+
+.container-filter a:hover {
+  color: #222222 !important;
+}
+
+.container-filter a.active {
+  color: #222222 !important;
+  border-bottom: 1px solid #222222;
+}
+
+.item-box {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.item-box a {
+  display: inline-block;
+}
+
+.item-box .item-mask {
+  background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9);
+  position: absolute;
+  transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  text-align: center;
+}
+
+.item-box .item-mask .item-caption {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  opacity: 0;
+}
+
+.item-box:hover .item-mask {
+  opacity: 1;
+  visibility: visible;
+  cursor: pointer !important;
+}
+
+.item-box:hover .item-caption {
+  opacity: 1;
+}
+
+.item-box:hover .item-container {
+  width: 100%;
+}
+
+.services-box {
+  padding: 45px 25px 45px 25px;
+}
+
 
 
 
