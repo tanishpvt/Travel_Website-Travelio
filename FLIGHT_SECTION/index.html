@@ -1,0 +1,308 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Magdalena Myka">
+	<title>Flight Search</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+	
+
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+	
+	<!--Font-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+	
+	<!-- LESS -->
+	<link rel="stylesheet/less" href="css/style.less">
+	<script src="js/less.min.js"></script>
+
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/datepicker.js"></script>
+	<script src="js/priceslider.js"></script>
+	<script src="js/tabs.js"></script>
+
+</head>
+<body>
+
+	<div class="preload">
+
+        <img class="airplane" src="./images/airplane.png" alt="airplane">
+         <h3>Hold on We are fetching your flight</h3>
+         <img class="cloud1" src="./images/cloud.png" alt="cloud1">
+         <img class="cloud2" src="./images/cloud.png" alt="cloud2">
+         <img class="cloud3" src="./images/cloud.png" alt="cloud3">
+    </div>
+
+    <section>
+<!-- 
+    <h1>Arrived</h1>
+    <img src="./images/ss.JPG" alt="arrived"> -->
+
+</section>
+
+<script src="app.js"></script>
+
+	<div class="container">
+
+		<!-- Jumbotron with logo -->
+		<!-- <div class="jumbotron">
+			<img src="img/logo.png" alt="Flight Mate Logo" class="img-responsive">
+		</div> -->
+
+		<div class="row">
+			<div class="col-md-3">
+
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active" id="one-way-tab"><a role="tab" data-toggle="tab">One way</a></li>
+					<li role="presentation" id="return-tab"><a role="tab" data-toggle="tab">Return</a></li>
+				</ul>
+
+				<!-- Tab pane -->
+				<div class="tab-content col-sm-6 col-sm-offset-3 col-md-12 col-md-offset-0">
+					<div role="tabpanel" class="tab-pane active">
+						<form role="form">
+							<div class="form-group">
+								<label for="from">From</label>
+								<select class="form-control" id="from">
+									<option></option>
+									<option value="BOM">Mumbai - BOM</option>
+									<option value="DEL">Delhi - DEL</option>
+									<option value="BLR">Bangalore - BLR</option>
+									<option value="PUN">Pune - PUN</option>
+									<option value="KOL">Kolkatta - KOL</option>
+								</select>
+								<!-- <input type="text" class="form-control" id="from"> -->
+							</div>
+							<div class="form-group">
+								<label for="destination">Destination</label>
+								<!-- <input type="text" class="form-control" id="destination"> -->
+								<select class="form-control" id="from">
+									<option></option>
+									<option value="BOM">Mumbai - BOM</option>
+									<option value="DEL">Delhi - DEL</option>
+									<option value="BLR">Bangalore - BLR</option>
+									<option value="PUN">Pune - PUN</option>
+									<option value="KOL">Kolkatta - KOL</option>
+								</select>
+							</div>
+							<div class="form-group" id="departure-date">
+								<p class="form-input-title">Departure date</p>
+								<div class="controls">
+									<div class="input-group">
+										<input id="date-picker-from" type="text" class="date-picker form-control" title="Click to pick a departure date" />
+										<label for="date-picker-from" class="input-group-addon btn" title="Click icon calendar to pick a departure date" >
+											<span class="glyphicon glyphicon-calendar"></span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group" id="return-date">
+								<p class="form-input-title">Return date</p>
+								<div class="controls">
+									<div class="input-group">
+										<input id="date-picker-to" type="text" class="date-picker form-control" title="Return date picker"/>
+										<label for="date-picker-to" class="input-group-addon btn">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="passengers">Passengers</label>
+								<select class="form-control" id="passengers">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+							</div>
+						</form>
+					</div> 
+					
+					<button class="btn btn-default" type="submit" id="search-button" alt="Search button">
+						<span class="glyphicon glyphicon-search"></span> Search
+					</button>
+				</div> <!-- end of tabs -->
+
+				<!-- Refine price -->
+				<div class="col-sm-6 col-sm-offset-3 col-md-12 col-md-offset-0" id="price-range">
+					<p class="form-input-title">Refine flight search</p>
+
+					<div id="price-slider"></div>
+					<div id="amount">
+						<div id="price-from">
+							<input type="text" id="amount-min" title="Set minimal price" readonly >
+						</div>
+						<div id="price-to">
+							<input type="text" id="amount-max" title="Set maximal price" readonly >
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Search results -->
+			<div class="col-sm-12 col-md-9">
+
+				<!-- First row with header and dates -->
+				<div class="row" id="results-header">
+					<div class="col-md-6">
+						<h1>Your Results</h1>
+					</div>
+
+					<div class="col-md-6" id="journey-dates">
+						<p id="depart-date-header">Depart: 1 January 2022</p>
+						<p id="arrive-date-header">Return: 10 February 2022</p>
+					</div>
+				</div>
+				
+				<!-- All results (these are sample static data)-->
+				<div class="row"  >
+					<div class="col-md-12" id="results" >
+
+						<!-- Result 1 -->
+						<div class="panel panel-default"  >
+							<div class="panel-body" >
+								<div class="col-md-1 vertically-centered">
+									<img src="img/logo-3.png" alt="Quantas Logo" class="img-responsive">
+								</div>
+								<div class="col-sm-4 col-md-3 vertically-centered">
+									<ul class="list-unstyled">
+										<li>AI-202</li>
+										<li><strong>MUMBAI > DELHI</strong></li>
+										<li>Depart: 10:00 AM</li>
+										<li>Arrive: 12.00 PM</li>
+									</ul>
+								</div>
+								<div class="col-sm-4 col-md-3 vertically-centered">
+									<ul class="list-unstyled">
+										<li>AI-203</li>
+										<li><strong>DELHI > BENGULURU</strong></li>
+										<li>Depart: 9:00 PM</li>
+										<li>Arrive: 10.00 PM</li>
+									</ul>
+								</div>
+								<div class="col-sm-4 col-md-2 price">
+									<p>₹7,200</p>
+								</div>
+								<div class="col-sm-12 col-md-3 vertically-centered-button">
+									<button type="button" class="btn btn-default" alt="Select this flight button">Select this flight</button>
+								</div>
+							</div>
+						</div>
+
+						<!-- Result 2 -->
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="col-md-1 vertically-centered">
+									<img src="img/logo-4.png" alt="Virgin logo" class="img-responsive">
+								</div>
+								<div class="col-sm-4 col-md-3 vertically-centered">
+									<ul class="list-unstyled">
+										<li>AT-502</li>
+										<li><strong>SYD > MLB</strong></li>
+										<li>Depart: 10:00 AM</li>
+										<li>Arrive: 5.00 PM</li>
+									</ul>
+								</div>
+								<div class="col-sm-4 col-md-3 vertically-centered">
+									<ul class="list-unstyled">
+										<li>AT-503</li>
+										<li><strong>MLB > SYD</strong></li>
+										<li>Depart: 5:00 AM</li>
+										<li>Arrive: 10.00 AM</li>
+									</ul>
+								</div>
+								<div class="col-sm-4 col-md-2 price" >
+									<p>₹8,200</p>
+								</div>
+								<div class="col-sm-12 col-md-3 vertically-centered-button">
+									<button type="button" class="btn btn-default" alt="Select this flight button">Select this flight</button>
+								</div>
+							</div>
+						</div>
+
+						<!-- Result 3 -->
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="col-md-1 vertically-centered">
+									<img src="img/logo-2.png" alt="Jetstar Logo" class="img-responsive">
+								</div>
+								<div class="col-sm-4 col-md-3 vertically-centered">
+									<ul class="list-unstyled">
+										<li>AS-102</li>
+										<li><strong>VLC > MAD</strong></li>
+										<li>Depart: 10:00 AM</li>
+										<li>Arrive: 11.00 AM</li>
+									</ul>
+								</div>
+								<div class="col-sm-4 col-md-3 vertically-centered">
+									<ul class="list-unstyled">
+										<li>AS-100</li>
+										<li><strong>MAD > VLC</strong></li>
+										<li>Depart: 9:00 AM</li>
+										<li>Arrive: 10.00 AM</li>
+									</ul>
+								</div>
+								<div class="col-sm-4 col-md-2 price">
+									<p>₹7,200</p>
+								</div>
+								<div class="col-sm-12 col-md-3 vertically-centered-button">
+									<button type="button" class="btn btn-default" alt="Select this flight button">Select this flight</button>
+								</div>
+							</div>
+						</div>
+
+						<!-- Result 4 -->
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="col-md-1 vertically-centered">
+									<img src="img/logo-1.png" alt="AirAustralia Logo" class="img-responsive">
+								</div>
+								<div class="col-sm-4 col-md-3 vertically-centered">
+									<ul class="list-unstyled">
+										<li>AL-808</li>
+										<li><strong>WRO > WAW</strong></li>
+										<li>Depart: 5:00 PM</li>
+										<li>Arrive: 5.40 PM</li>
+									</ul>
+								</div>
+								<div class="col-sm-4 col-md-3 vertically-centered">
+									<ul class="list-unstyled">
+										<li>AL-803</li>
+										<li><strong>WAW > WRO</strong></li>
+										<li>Depart: 10:00 AM</li>
+										<li>Arrive: 10.40 AM</li>
+									</ul>
+								</div>
+								<div class="col-sm-4 col-md-2 price" >
+									<p>₹7,200</p>
+								</div>
+								<div class="col-sm-12 col-md-3 vertically-centered-button">
+									<button type="button" class="btn btn-default" alt="Select this flight button">Select this flight</button>
+								</div>
+							</div>
+						</div>
+					</div> <!-- End of search results -->
+				</div>
+			</div>
+		</div>
+
+		<hr>
+		<div class="footer">
+			<p>Travelio</p>
+		</div>
+	</div> <!-- end of container -->
+
+</body>
+</html>
