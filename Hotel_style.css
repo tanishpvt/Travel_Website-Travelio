@@ -27,11 +27,13 @@ body {
   font-family: "Times New Roman", Times, serif;
   font-size: 1.6rem;
 }
-
+.booking {
+  background-color: var(--grey);
+}
 .container {
   width: 100%;
   max-width: 120rem;
-  padding: 0 1.5rem;
+  padding: 0 3rem;
   margin: 0 auto;
 }
 .btn-cust {
