@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VILLA & APTS </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <div class="hero">
+
+        <nav>
+            <img src="" class="menu-img">
+            <img src="" class="logo">
+
+            <ul>
+                <li><a href="">Villas</a></li>
+                <li><a href="">Apartments</a></li>
+                <li><a href="">Special Rooms</a></li>
+            </ul>
+            <button type="button" onclick="toggleBtn()" id="btn"><span></span></button>
+        </nav>
+
+
+        <div class="lamp-container">
+            <img src="images/lamp.png" class="lamp">
+            <img src="images/light.png" class="light" id="light">
+        </div>
+
+      
+        <marquee behavior="scroll" direction="right" scrollamount="20">Site Under Maintaince</marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="20">Site Under Maintaince</marquee>
+      
+        <div class="text-container">
+        
+            <h2>Modern Homes & Villas</h3><br>
+            <p>STAY SMARTLY : Control your rooms lights, fans & AC throug our App .<br><br>_By Travelio
+            </p>
+            <a href="">Book Now</a>
+
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+        var btn  = document.getElementById("btn");
+        var light  = document.getElementById("light");
+
+        function toggleBtn(){
+            btn.classList.toggle("active");
+            light.classList.toggle("on");
+        }
+
+    
+    </script>
+
+
+</body>
+
+</html>
