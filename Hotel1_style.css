@@ -188,6 +188,67 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+/* Tab menu */
+#services-tabs {
+  margin-top: 20px;
+}
+#services-tabs ul li {
+  list-style-type: none;
+  padding: 5px 30px;
+}
+#services-tabs ul li a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #212227;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0;
+}
+#services-tabs ul li.r-tabs-state-active a {
+  color: #548ca8;
+  font-weight: 700;
+  border-bottom: 3px solid #548ca8;
+  padding-bottom: 5px;
+  transition: border-color 30ms linear;
+}
+
+.service-tab .col {
+  padding: 0;
+}
+.service-tab .tab-bg {
+  background: white;
+  padding: 59px 30px;
+}
+.service-tab h3 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+.service-tab p {
+  line-height: 24px;
+  margin-bottom: 30px;
+}
+.btn-general {
+  font-family: "Times New Roman", Times, serif;
+  border-radius: 28px;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin: 0 7px;
+  padding: 12px 47px 12px 47px;
+  transition: all 0.5s;
+}
+.btn-yellow {
+  color: white;
+  border: 1px solid #fb527a;
+  background: #fb527a;
+}
+.btn-yellow:hover,
+.btn-yellow:focus {
+  color: white;
+  border: 1px solid #212227;
+  background: #212227;
+}
+
 @media screen and (min-width: 1000px) {
   section:not(.booking) {
     padding: 2rem 0;

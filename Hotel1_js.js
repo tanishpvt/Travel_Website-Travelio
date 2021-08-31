@@ -6,3 +6,9 @@
 //         counter = 1;
 //     }
 // },3000);
+
+$(function () {
+            $("#services-tabs").responsiveTabs({
+                animation: 'slide'
+            })
+        });
