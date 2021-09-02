@@ -13,6 +13,9 @@
   --dard-color: #532e1c;
   --light-color: #c5a880;
   --grey: #e6e6e6;
+  --light-grey: #476072;
+  --dark-grey: #548ca8;
+  --darkest-grey: #334257;
   --alt-light-color: #e6e6e6;
   --light-transparant: rgba(197, 168, 128, 0.7);
   --light-transparant-alt: rgba(197, 168, 128, 0.4);
@@ -100,7 +103,7 @@ body {
 }
 
 .btn-brown {
-  background-color: black;
+  background-color: var(--darkest-grey);
 }
 
 .btn-brown:hover {
@@ -144,7 +147,7 @@ body {
   margin-top: 20px;
   padding: 10px;
   width: 100%;
-  height: 95%;
+  height: 96%;
   display: flex;
   overflow: hidden;
   position: relative;
@@ -165,7 +168,7 @@ body {
     rgba(0, 0, 0, 0.75) 0px 2px 4px -1px;
   border-radius: 10px;
   position: relative;
-  height: 20rem;
+  height: 15rem;
 }
 .room-image {
   width: 100%;
@@ -181,11 +184,11 @@ body {
   padding: 10px;
   overflow: hidden;
   position: relative;
+  width: 100%;
   height: 100%;
 }
 .map-size {
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
@@ -206,13 +209,19 @@ body {
   padding: 0;
 }
 #services-tabs ul li.r-tabs-state-active a {
-  color: #548ca8;
+  color: var(--dark-grey);
   font-weight: 700;
-  border-bottom: 3px solid #548ca8;
+  border-bottom: 3px solid var(--dark-grey);
   padding-bottom: 5px;
   transition: border-color 30ms linear;
 }
-
+.li-style {
+  list-style-type: disc;
+  color: var(--dark-grey);
+}
+.li-style span {
+  color: black;
+}
 .service-tab .col {
   padding: 0;
 }
@@ -220,8 +229,13 @@ body {
   background: white;
   padding: 59px 30px;
 }
+.service-tab h2 {
+  font-size: 30px;
+  color: var(--dark-grey);
+  margin-bottom: 30px;
+}
 .service-tab h3 {
-  font-size: 32px;
+  font-size: 20px;
   margin-bottom: 30px;
 }
 .service-tab p {
@@ -238,9 +252,13 @@ body {
   transition: all 0.5s;
 }
 .btn-yellow {
+  margin-top: 30px;
   color: white;
-  border: 1px solid #fb527a;
-  background: #fb527a;
+  font-weight: bold;
+  font-size: 13px;
+  border: 1px solid var(--darkest-grey);
+  background: var(--darkest-grey);
+  border-radius: 20px;
 }
 .btn-yellow:hover,
 .btn-yellow:focus {
@@ -248,7 +266,40 @@ body {
   border: 1px solid #212227;
   background: #212227;
 }
-
+#hot-time {
+  font-weight: bold;
+}
+#hot-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--dard-color);
+}
+.non-refund {
+  color: red;
+}
+.non-refund span {
+  margin-left: 10px;
+}
+.room-only {
+  color: black;
+}
+.room-only span {
+  margin-left: 5px;
+}
+.rule {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+.booking-div {
+  margin-top: 15px;
+  background-color: #eeeeee;
+  box-shadow: rgba(0, 0, 0, 0.1) -1px 9px 40px -12px,
+    rgba(0, 0, 0, 0.75) 0px 2px 4px -1px;
+}
+.price-section h3 {
+  font-weight: bold;
+  color: var(--darkest-grey);
+}
 @media screen and (min-width: 1000px) {
   section:not(.booking) {
     padding: 2rem 0;
