@@ -13,6 +13,9 @@
   --dard-color: #532e1c;
   --light-color: #c5a880;
   --grey: #e6e6e6;
+  --light-grey: #476072;
+  --dark-grey: #548ca8;
+  --darkest-grey: #334257;
   --alt-light-color: #e6e6e6;
   --light-transparant: rgba(197, 168, 128, 0.7);
   --light-transparant-alt: rgba(197, 168, 128, 0.4);
@@ -100,11 +103,11 @@ body {
 }
 
 .btn-brown {
-  background-color: black;
+  background-color: var(--darkest-grey);
 }
 
 .btn-brown:hover {
-  background-color: var(--dard-color);
+  background-color: black;
 }
 
 .btn-gradient {
@@ -205,7 +208,7 @@ body {
   font-size: 2.6rem;
   /* background-color: #532e1c; */
   border-radius: 10px;
-  color: #532e1c;
+  color: var(--darkest-grey);
   /* padding: 0.5rem; */
   position: relative;
   left: 0;
@@ -214,6 +217,7 @@ body {
   /* bottom: 2.5rem; */
   margin-top: 4rem;
   z-index: 10;
+  /* animation: slideFromLeft 5s ease-in-out 1; */
 }
 .room-price {
   display: block;
@@ -248,7 +252,7 @@ p {
 }
 
 .rating {
-  color: var(--dard-color);
+  color: #f9d71c;
 }
 /* Hotel filter */
 /* ul {
@@ -342,6 +346,13 @@ ul li label input:checked ~ .list:before {
   width: 7px;
 }
 ::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 6px;
+}
+::-moz-scrollbar {
+  width: 7px;
+}
+::-moz-scrollbar-thumb {
   background: #c0c0c0;
   border-radius: 6px;
 }

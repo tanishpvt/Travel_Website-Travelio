@@ -107,7 +107,7 @@ body {
 }
 
 .btn-brown:hover {
-  background-color: var(--dard-color);
+  background-color: black;
 }
 
 .btn-gradient {
@@ -139,9 +139,10 @@ body {
     rgba(0, 0, 0, 0.75) 0px 2px 4px -1px;
   border-radius: 10px;
 }
-/* .gallery {
+/* Galley section */
+.gallery {
   background: #a5a5a5;
-} */
+}
 .video-container {
   background-color: white;
   margin-top: 20px;
@@ -161,6 +162,7 @@ body {
   object-fit: cover;
 }
 .image-wrap {
+  background-color: white;
   margin-top: 25px;
   padding: 10px;
   overflow: hidden;
@@ -181,15 +183,18 @@ body {
   margin: 0;
 }
 .map-container {
-  padding: 10px;
+  margin-top: 15px;
+  border-radius: 15px;
+  background-color: white;
+  padding: 15px;
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 92%;
 }
 .map-size {
   width: 100%;
-  object-fit: cover;
+  height: 100%;
 }
 
 /* Tab menu */
@@ -295,10 +300,85 @@ body {
   background-color: #eeeeee;
   box-shadow: rgba(0, 0, 0, 0.1) -1px 9px 40px -12px,
     rgba(0, 0, 0, 0.75) 0px 2px 4px -1px;
+  border-radius: 15px;
 }
 .price-section h3 {
   font-weight: bold;
   color: var(--darkest-grey);
+}
+.details {
+  background-color: var(--grey);
+}
+
+/* Review section */
+.testimonial-box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.testimonial-box {
+  width: 500px;
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 20px;
+  margin: 15px;
+  cursor: pointer;
+}
+.profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.profile {
+  display: flex;
+  align-items: center;
+}
+.name-user {
+  display: flex;
+  flex-direction: column;
+}
+.name-user strong {
+  color: #3d3d3d;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+.name-user span {
+  color: #979797;
+  font-size: 15px;
+}
+.reviews {
+  color: #f9d71c;
+}
+.box-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.client-comment p {
+  font-size: 15px;
+  color: #4b4b4b;
+}
+.testimonial-box:hover {
+  transform: translate(-10px);
+  transition: all ease 0.3s;
+}
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 6px;
 }
 @media screen and (min-width: 1000px) {
   section:not(.booking) {
@@ -334,5 +414,15 @@ body {
   .input,
   .options {
     min-width: 10rem;
+  }
+  .testimonial-box {
+    width: 45%;
+    padding: 10px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .testimonial-box {
+    width: 45%;
+    padding: 10px;
   }
 }
