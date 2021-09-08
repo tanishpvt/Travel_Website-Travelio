@@ -911,6 +911,28 @@ section{
     box-shadow: 2.5px 4.33px 15px 0px rgba(0, 0, 0, 0.15);
 }
 
+/* hyperlinkkkk */
+a:link {
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: pink;
+  
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
 
   /* floating button */
 /* 

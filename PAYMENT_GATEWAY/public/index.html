@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Payment Gateway</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+  <!-- database -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="payment.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <main class="page payment-page">
+    <section class="payment-form dark">
+      <div class="container">
+        <div class="block-heading">
+          <h2>TRAVELIO</h2>
+          <p>Don't worry Travelio dosent store your any confedintional info like Debit or Credit card info <span>Hazzless Transaction</span></p>
+        </div>
+        <form>
+          <div class="products">
+            <h3 class="title">Checkout</h3>
+            <div class="item">
+              <span class="price">₹20000</span>
+              <p class="item-name">Dubai Package</p>
+              <p class="item-description">Have a Happpy Vaccation</p>
+            </div>
+
+            <div class="total">Total<span class="price">₹20000</span></div>
+          </div>
+          <div class="card-details">
+            <h3 class="title">Initialize Payment</h3>
+            <div class="row">
+
+              <div class="form-group col-sm-12">
+                <button type="button" class="btn btn-primary btn-block" onclick="paymentProcess()">Proceed</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Modal HTML -->
+  <div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="icon-box">
+            <i class="material-icons">&#xE876;</i>
+          </div>
+          <h4 class="modal-title">Awesome!</h4>
+        </div>
+        <div class="modal-body">
+          <p class="text-center">Your booking has been confirmed. Check your email for detials.</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <!-- <script src="/__/firebase/7.12.0/firebase-app.js"></script> -->
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+
+  <!-- Add Firebase products that you want to use -->
+
+  <!-- <script src="/__/firebase/7.12.0/firebase-database.js"></script> -->
+  <!-- Initialize Firebase
+<script src="/__/firebase/init.js"></script> -->
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+
+
+  <script src="payment.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
