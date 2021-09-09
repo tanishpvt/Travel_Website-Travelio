@@ -1,0 +1,62 @@
+
+
+body{
+  backgroundColor:#eee;
+}
+.home-5-bg {
+  background: #1E90FF;
+  position: relative;
+  background-size: cover;
+  height: 50vh;
+  background-position: center center;
+}
+
+.section {
+  position: relative;
+}
+
+.home-5-content {
+z-index: 1;
+position: relative;
+}
+
+.bg-overlay {
+  background-color: #000;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.home-center {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.home-desc-center {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.home-5-content {
+  z-index: 1;
+  position: relative;
+}
+
+.text-white-70 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.f-15 {
+  font-size: 15px;
+}
+
+.home-5-bg #particles-js {
+  z-index: 1!important;
+position: absolute;
+  width: 100%;
+  height: 100%;
+}
