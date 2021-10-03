@@ -136,12 +136,11 @@
     </div>   
     <div class="content row r fil-fli" id="content">
         <div class="filters col-3 r" id="filter">
-            <div id="clearfilters" class="text-primary d-flex justify-content-end">Clear Filters</div>
+                <div id="clearfilters" class="text-primary d-flex justify-content-end">Clear Filters</div>
                 <div class="flightscount" id="flightscount">
                     <div class="row"><h5>Airlines</h5></div>                    
                 </div>
                 <h5 class="row mt-4">Departure Time</h5>
-
                 <div class="row">
                     <button type="button" class="btn btn-outline-secondary timingb col-2 timef dtime" id="em">
                         <span class="material-icons d-block">wb_twilight</span>
@@ -159,9 +158,7 @@
                         <span class="material-icons d-block">  nights_stay </span>
                         <p class="card-text timings">After 6 PM</p>                            
                     </button>
-
-                </div>
-                
+                </div>               
                 <h5 class="row mt-4">Arrival Time</h5>
                 <div class="row">
                     <button type="button" class="btn btn-outline-secondary timingb col-2 timef atime" id="em">
@@ -182,7 +179,7 @@
                     </button>                                
                 
                 </div>
-            </div>
+        </div>
         <div class="r results col" id="result">
             <div class="bg-white res-header mb-2">
                 <div class="row mt-3  fheads">
@@ -195,33 +192,32 @@
             </div>
             
         </div>
-        <div class="r restway col" id="result">
-            <div class="bg-white res-header mb-2">
-                <div class="row mt-3 fheads ">
-                    <div class="col twayh">
-                        <div class="twayf"></div>
-                        <div class="row">
+        <div class="rtrip-header restway col" id="restway">
+            <div class="row">
+                <div class="col  go" id="go">
+                    <div class="retheadings bg-white rgohead">
+                        <div class="row rtsd" id="gosd">Flights from x to y</div>
+                        <div class="row twayheads">
                             <div class="col d-flex justify-content-center reth">Departure</div>
                             <div class="col d-flex justify-content-center reth">Duration</div>
                             <div class="col d-flex justify-content-center reth">Arrival</div>
-                            <div class="col-4 d-flex justify-content-center reth">Price</div>
-                         
-                        </div>                        
-                    </div>
-                    <div class="col twayh return">
-                        <div class="tways"></div>
-                        <div class="row">
-                            <div class="col d-flex justify-content-center reth">Departure</div>
-                            <div class="col d-flex justify-content-center reth">Duration</div>
-                            <div class="col d-flex justify-content-center reth">Arrival</div>
-                            <div class="col-4 d-flex justify-content-center reth">Price</div>
-                           
+                            <div class="col d-flex justify-content-center reth">Price</div>
                         </div>
-                        
-                    </div>
+                    </div>                   
                 </div>
+                <div class="col ret" id="ret">
+                    <div class="retheadings bg-white rrethead">
+                        <div class="row rtsd" id="retsd">Flights from x to y</div>
+                        <div class="row twayheads">
+                            <div class="col d-flex justify-content-center reth">Departure</div>
+                            <div class="col d-flex justify-content-center reth">Duration</div>
+                            <div class="col d-flex justify-content-center reth">Arrival</div>
+                            <div class="col d-flex justify-content-center reth">Price</div>
+                        </div>
+                    </div>                    
+                </div>
+
             </div>
-            
         </div>
     </div> 
     <script src="js/script.js"></script>

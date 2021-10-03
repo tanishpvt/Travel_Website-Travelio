@@ -7,6 +7,8 @@ tomorrow = dd + '-' + mm + '-' + yyyy;
 var from = " ";
 var to = " ";
 var searchedflights =[];
+var goSearchedFlights = [];
+var  retSearchedFlights = [];
 var flightscount = {};
 var  adults = 3;
 var children = 1;
@@ -15,6 +17,7 @@ var slectedClass= "Premium Economy"
 var total_travellers =adults+children+infants;
 var  toFlights;
 var  fromFlights;
+var searchClicked = false;
 $('#content').hide();
 $('#travellers').text(total_travellers)
 function radiobgchange(){
@@ -44,6 +47,12 @@ function radiobgchange(){
     selected.classList.add('grey-bg')
     selected.children[0].classList.add('r-button')
     selected.children[1].classList.add('r-label')
+
+    if(searchClicked == true)
+        dtimeFFlights = []
+        atimeFFlights = []
+        namefilters =[]
+        search()
 
 }
 $("#oway").addClass("grey-bg")
@@ -78,7 +87,7 @@ const flights  = [
      premiumeconomyprice:"6600 ",duration:"05 h 10 m ",dtime:"09:30", atime:"14:40",dt:"m",at:"af",'img':'ai'},
 
 {name:"Spice Jet", source:"Bangalore", dest:"Greater Noida" ,economyprice:"6800", businessprice:"13900",
-     premiumeconomyprice:"7300 ",duration:"05 h 15 m",dtime:"05:50", atime:"11:05",dt:"em",at:"m",'img':'s'},
+     premiumeconomyprice:"7300 ",duration:"05 h 15 m",dtime:"05:50", atime:"11:05",dt:"em",at:"m",'img':'sj'},
      
 {name:"Vistara", source:"Bangalore", dest:"Greater Noida" ,economyprice:"7600", businessprice:"14800",
      premiumeconomyprice:"5300 ",duration:"06 h 30 m",dtime:"13:25", atime:"19:55",dt:"af",at:"n",'img':'v'},
@@ -116,14 +125,22 @@ const flights  = [
 {name:"Indigo", source:"Nagpur", dest:"Ahmedabad", economyprice:"7300 ", businessprice:"12500", 
     premiumeconomyprice:"6100",duration:"09 h 55 m",dtime:"11:45" ,atime:"21:40",dt:"m",at:"n",'img':'i'},
 
-{name:"Vistara ", source:"Mumbai", dest:"Kolkata", economyprice:"8700", businessprice:"15200", 
+{name:"Vistara", source:"Mumbai", dest:"Kolkata", economyprice:"8700", businessprice:"15200", 
     premiumeconomyprice:"8500",duration:"02 h 40 m",dtime:"06:10", atime:"08:50",dt:"m",at:"m",'img':'v'},
 
-{name:"Spice Jet ", source:"Mumbai", dest:"Kolkata", economyprice:"9200", businessprice:"16800", 
+{name:"Spice Jet", source:"Mumbai", dest:"Kolkata", economyprice:"9200", businessprice:"16800", 
     premiumeconomyprice:"9100",duration:"05 h 15 m",dtime:"05:45", atime:"11:00",dt:"em",at:"m",'img':'sj'},
 
-{name:"TruJet ", source:"Mumbai", dest:"Kolkata", economyprice:"7300", businessprice:"13800", 
+{name:"TruJet", source:"Mumbai", dest:"Kolkata", economyprice:"7300", businessprice:"13800", 
     premiumeconomyprice:"7900",duration:"05 h 10 m",dtime:"16:15", atime:"21:25",dt:"af",at:"n",'img':'tj'},
+{name:"Spice Jet", source:"Mumbai", dest:"Hyderabad", economyprice:"7300", businessprice:"13800", 
+    premiumeconomyprice:"7900",duration:"02 h 20 m",dtime:"19:15", atime:"21:35",dt:"n",at:"n",'img':'sj'},
+{name:"Indigo", source:"Mumbai", dest:"Hyderabad", economyprice:"7300", businessprice:"13800", 
+    premiumeconomyprice:"7900",duration:"01 h 50 m",dtime:"11:15", atime:"12:55",dt:"m",at:"af",'img':'i'},
+{name:"Air India", source:"Mumbai", dest:"Hyderabad", economyprice:"7300", businessprice:"13800", 
+    premiumeconomyprice:"7900",duration:"02 h 10 m",dtime:"16:15", atime:"18:25",dt:"af",at:"n",'img':'ai'},
+{name:"TruJet", source:"Mumbai", dest:"Hyderabad", economyprice:"7300", businessprice:"13800", 
+    premiumeconomyprice:"7900",duration:"02 h 10 m",dtime:"17:15", atime:"19:25",dt:"af",at:"n",'img':'tj'},
 
 {name:"Air India ", source:"Mumbai", dest:"Kolkata", economyprice:"7400", businessprice:"14300", 
     premiumeconomyprice:"7600",duration:"7 h 40 m",dtime:"10:45", atime:"18:25",dt:"m",at:"n",'img':'ai'},
@@ -149,7 +166,7 @@ const flights  = [
 {name:"TruJet", source:"Hyderabad", dest:"Mumbai" ,economyprice:"4600", businessprice:"10000",
      premiumeconomyprice:"4400",duration:"6 h 05 m",dtime:"14:35", atime:"20.40",dt:"af",at:"n",'img':'tj'},
 
-{name:"Alliance Air", source:"Hyderabad", dest:"Mumbai" ,economyprice:"5700", businessprice:"12300",
+{name:"Air Asia", source:"Hyderabad", dest:"Mumbai" ,economyprice:"5700", businessprice:"12300",
      premiumeconomyprice:"5200",duration:"01 h 40 m",dtime:"08:00", atime:"09:40",dt:"m",at:"m",'img':'aa'},
 
 {name:"Vistara", source:"Hyderabad", dest:"Mumbai" ,economyprice:"6800 ", businessprice:"13500",
@@ -230,10 +247,10 @@ const flights  = [
 {name:"Spice Jet", source:"Bangalore", dest:"Delhi", economyprice:"7300 ", businessprice:"13800",
      premiumeconomyprice:"7100 ",duration:"02 h",dtime:"17:20" ,atime:"19:20",dt:"af",at:"n",'img':'sj'}, 
 
-{name:"TruJet ", source:"Bangalore", dest:"Delhi", economyprice:"8400", businessprice:"14600",
+{name:"TruJet", source:"Bangalore", dest:"Delhi", economyprice:"8400", businessprice:"14600",
      premiumeconomyprice:"7900 ",duration:"02 h 40 m ",dtime:"07:45" ,atime:"10:25",dt:"m",at:"m",'img':'tj'},
 
-{name:"Indigo ", source:"Bangalore", dest:"Delhi", economyprice:"9100 ", businessprice:"15900",
+{name:"Indigo", source:"Bangalore", dest:"Delhi", economyprice:"9100 ", businessprice:"15900",
      premiumeconomyprice:"8900 ",duration:"02 h 45 m",dtime:"12:55" ,atime:"15:40",dt:"af",at:"af",'img':'i'}, 
 
 {name:"Indigo", source:"Bangalore", dest:"Delhi", economyprice:"8600 ", businessprice:"14700",
@@ -285,12 +302,8 @@ var airports = [
     {"city" : "Kolkata" ,"name":"Nscbi Airport"},
     {"city" : "Raipur" ,"name":"Raipur Airport India"},
     {"city" : "Indore" ,"name":"Devi Ahilyabai Holkar Airport India"},
-    {"city" : "Goa" ,"name":" Dabolim Goa International Airport"},
-   
-
-     
+    {"city" : "Goa" ,"name":" Dabolim Goa International Airport"},     
 ]
-
 
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var today = new Date();
@@ -533,60 +546,68 @@ $(".t-li").click(function(){
 })
 
 function search(){
-    searchedflights = []
-    nameFFlights = []
-    dtimeFFlights = []
-    atimeFFlights = []
-    namefilters =[]
-    filteratime =''
-    filterdtime =''
-    $('.fr').remove()
-    let sfrom = $('#sfrom').text()
-    let sto = $('#sto').text();
-    if(sfrom == sto){
-        let ele=
-        `<div class="alert alert-warning alert-dismissible fade show sdeq w-50 mt-5 " role="alert">
-        <strong>Source and destination cannot be same</strong>
-        <button type="button" class="close btn btn-outline cbtn" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>'
-        </div>`
-        $('.sdeq').remove()
-        $('.nof').remove()
-        $('#main').append(ele);
-    }
-    else{
-        sfrom = sfrom[0].toUpperCase()+sfrom.slice(1)
-        searchedflights  = flights.filter(f =>   f.source ==  sfrom & f.dest == sto )
-        if(searchedflights.length>0){
-            updateFlights()
-            $('#content').show();
-
-
-
-        }
-        else{
-            $('.fl-count').remove()
-            let ele = 
-            `<div class="alert alert-warning alert-dismissible fade show nof w-50 mt-5 " role="alert">
-            <strong>No flights from ${from} to ${to}</strong>
+    searchClicked = true
+    let ch = document.querySelector('input[name="tripchoice"]:checked').value
+    if(ch == "oway"){
+        searchedflights = []
+        nameFFlights = []
+        nameFFlightsGo =[]
+        nameFFlightsRet =[]
+        dtimeFFlights = []
+        atimeFFlights = []
+        namefilters =[]
+        filteratime =''
+        filterdtime =''
+        $('.fr').remove()
+        $('#content').show()
+        $('#result').show()
+        $('#restway').hide()
+        let sfrom = $('#sfrom').text()
+        let sto = $('#sto').text();
+        if(sfrom == sto){
+            let ele=
+            `<div class="alert alert-warning alert-dismissible fade show sdeq w-50 mt-5 " role="alert">
+            <strong>Source and destination cannot be same</strong>
             <button type="button" class="close btn btn-outline cbtn" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>'
             </div>`
-            $('.nof').remove()
             $('.sdeq').remove()
+            $('.nof').remove()
             $('#main').append(ele);
+        }
+        else{
+            sfrom = sfrom[0].toUpperCase()+sfrom.slice(1)
+            searchedflights  = flights.filter(f =>   f.source ==  sfrom & f.dest == sto )
+            if(searchedflights.length>0){
+                updateFlights()
+                $('#content').show();
+            }
+            else{
+                $('.fl-count').remove()
+                let ele = 
+                `<div class="alert alert-warning alert-dismissible fade show nof w-50 mt-5 " role="alert">
+                <strong>No flights from ${from} to ${to}</strong>
+                <button type="button" class="close btn btn-outline cbtn" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>'
+                </div>`
+                $('.nof').remove()
+                $('.sdeq').remove()
+                $('#main').append(ele);
 
+            }
         }
     }
-        
+    else{
+        goSearchedFlights = []
+        retSearchedFlights =[]
+        nameFFlightsGo = []
+        nameFFlightsRet =[]
+        rtripsearch()
 
+    }
 }
-
-// function updateToFlights(){
-
-// }
 var namefilters =[]
 function updatefilters(e){
     let chkid= $(e).attr('id')
@@ -599,14 +620,10 @@ function updatefilters(e){
             namefilters = namefilters.filter(value => value !== chkval);
         }
     }
-
     applyNameTimeFilters()
-
 }
-
 var filterdtimes = []
 var filteratimes = []
-
 $(".dtime").click(function(){
     $(this).toggleClass('btn-primary')
     $(this).toggleClass('btn-outline-secondary')
@@ -624,18 +641,15 @@ $(".atime").click(function(){
     $(this).toggleClass('btn-primary')
     $(this).toggleClass('btn-outline-secondary')
     fat= $(this).attr('id')
-    console.log(fat)
     filteratimes.indexOf(fat)>-1
     let index = filteratimes.indexOf(fat);
     if (index > -1) 
         filteratimes.splice(index, 1);
     else
         filteratimes.push(fat)
-    console.log(filteratimes)
     applyNameTimeFilters()
 })
 
-var modal_pos;
 function updateFlights(){
     $('.nof').remove()
     $('.nfilters').remove()
@@ -678,98 +692,240 @@ function updateFlights(){
               </div>`
                 $('#result').append(ele);
             }   
-            // $('.mbtn').click(function(){
-            //     modal_pos =$(this).offset().top;
-            //     let sid = $(this).attr('id')
-            //     // $('#sid').css({'top' : modal_pos + 'px'})
-            // })
 
-            flightscount={};
-            searchedflights.forEach(function(f){
-            flightscount[f.name]? flightscount[f.name]++ : flightscount[f.name]=1;
-            });
-            for (var key in flightscount) {
-                let keym = key.replace(/ /g, '@');
-                let ele = 
-                `<div class="form-check mb-2 fl-count">
-                     <input class="form-check-input" type="checkbox" value=${keym} id=${keym} onclick="updatefilters(this)">
-                     <label class="form-check-label" for="airindia">
-                       ${key}(${flightscount[key]})
-                     </label>
-                </div>`
-                $('#flightscount').append(ele)               
-            }
-            $('#clearfilters').addClass('text-white')
-    let ch = document.querySelector('input[name="tripchoice"]:checked').value
-    if(ch == "rtrip"){
-        $('.flight-row').addClass('w-50')
-        $(".fimg").attr('width','50');
-        $(".results").hide()
-    }
-    else if(ch =="oway"){
-        $(".results").show()
-        $(".restway").hide()
-
-    }
-
+            
+            $("#restway").hide()
+            updateAllFilters()
 }
 
 
 
 var nameFFlights =[]
+var nameFFlightsGo = []
+var nameFFlightsRet = []
+
 
 function applyNameTimeFilters(){
-    nameFFlights =[];
-    if(namefilters.length>0)
-    nameFFlights  = searchedflights.filter(f => namefilters.indexOf(f.name)>-1)
-    else
-    nameFFlights = searchedflights;
-    if(filterdtimes.length>0)
-        nameFFlights  = nameFFlights.filter(f => filterdtimes.indexOf(f.dt)>-1)
-    if(filteratimes.length>0)
-        nameFFlights  = nameFFlights.filter(f => filteratimes.indexOf(f.at)>-1)
-    $('.fr').remove()
-    if(nameFFlights.length>0){
-        $('.nfilters').remove()
-        for(i = 0; i < nameFFlights.length; i++) {        
+    let ch = document.querySelector('input[name="tripchoice"]:checked').value
+    if(ch == "oway"){
+        nameFFlights =[];
+        if(namefilters.length>0)
+        nameFFlights  = searchedflights.filter(f => namefilters.indexOf(f.name)>-1)
+        else
+        nameFFlights = searchedflights;
+        if(filterdtimes.length>0)
+            nameFFlights  = nameFFlights.filter(f => filterdtimes.indexOf(f.dt)>-1)
+        if(filteratimes.length>0)
+            nameFFlights  = nameFFlights.filter(f => filteratimes.indexOf(f.at)>-1)
+        $('.fr').remove()
+        if(nameFFlights.length>0){
+            $('.nfilters').remove()
+            for(i = 0; i < nameFFlights.length; i++) {        
+                let ele = 
+                '<div class="row  fr flight-row">'+
+                    '<div class="col flex-col"> <img src="Images/'+nameFFlights[i]['img'] + '.png" width="100px" ></div>'+
+                    '<div class="col flex-col">'+nameFFlights[i]['name']+'</div>'+
+                    '<div class="col flex-col">'+
+                        '<div class=" d-flex justify-content-center pcolor">'+nameFFlights[i]['source']+'</div>'+
+                        '<div class=" d-flex justify-content-center tcolor">'+nameFFlights[i]['dtime']+'</div>'+
+                    '</div>'+
+                    '<div class="col flex-col">'+nameFFlights[i]['duration']+ '</div>'+
+                    '<div class="col flex-col">'+
+                        '<div  class=" d-flex justify-content-center pcolor">'+nameFFlights[i]['dest']+'</div>'+
+                        '<div  class="d-flex justify-content-center tcolor">'+nameFFlights[i]['atime']+'</div>'+
+                    '</div>'+
+                    '<div class ="col flex-col"><button type="button" class="btn btn-outline-primary">Details</button></div>'+
+                '</div>'+
+                `<div id="f${i}" class="modal fade modalbox" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                        <button type="button" class="close btn btn-danger" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">${searchedflights[i]['source']} to ${searchedflights[i]['dest']}</h4>
+                        </div>
+                        <div class="modal-body">
+                        <p>price: &#8377;${searchedflights[i][fclasssel]}</p>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Book</button>
+                        </div>
+                        </div>              
+                    </div>
+                 </div>`
+                
+                $('#result').append(ele);
+            }
+        
+        }
+        else{
             let ele = 
-            '<div class="row  fr flight-row">'+
-                '<div class="col flex-col"> <img src="Images/'+nameFFlights[i]['img'] + '.png" width="100px" ></div>'+
-                '<div class="col flex-col">'+nameFFlights[i]['name']+'</div>'+
-                '<div class="col flex-col">'+
-                    '<div class=" d-flex justify-content-center pcolor">'+nameFFlights[i]['source']+'</div>'+
-                    '<div class=" d-flex justify-content-center tcolor">'+nameFFlights[i]['dtime']+'</div>'+
-                '</div>'+
-                '<div class="col flex-col">'+nameFFlights[i]['duration']+ '</div>'+
-                '<div class="col flex-col">'+
-                    '<div  class=" d-flex justify-content-center pcolor">'+nameFFlights[i]['dest']+'</div>'+
-                    '<div  class="d-flex justify-content-center tcolor">'+nameFFlights[i]['atime']+'</div>'+
-                '</div>'+
-                '<div class ="col flex-col"><button type="button" class="btn btn-outline-primary">Details</button></div>'+
-            '</div>'
+            `<div class="alert alert-warning alert-dismissible fade show nfilters w-50 mt-5 " role="alert">
+            <strong>No flights matches filters</strong>
+            <button type="button" class="close btn btn-outline cbtn" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>'
+            </div>`
             $('#result').append(ele);
         }
-      
+        if(namefilters.length>0|| filteratimes.length>0 || filterdtimes.length>0){
+            $('#clearfilters').removeClass('text-white')
+            $('#clearfilters').addClass('text-primary')
+        }
+        else{
+            $('#clearfilters').removeClass('text-primary')
+            $('#clearfilters').addClass('text-white')
+        }
     }
     else{
-        let ele = 
-        `<div class="alert alert-warning alert-dismissible fade show nfilters w-50 mt-5 " role="alert">
-        <strong>No flights matches filters</strong>
-        <button type="button" class="close btn btn-outline cbtn" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>'
-        </div>`
-        $('#result').append(ele);
-    }
-    if(namefilters.length>0|| filteratimes.length>0 || filterdtimes.length>0){
-        $('#clearfilters').removeClass('text-white')
-        $('#clearfilters').addClass('text-primary')
-    }
-    else{
-        $('#clearfilters').removeClass('text-primary')
-        $('#clearfilters').addClass('text-white')
-    }
 
+        nameFFlightsGo =[];
+        nameFFlightsRet =[]
+        if(namefilters.length>0){
+            nameFFlightsGo  = goSearchedFlights.filter(f => namefilters.indexOf(f.name)>-1)
+            nameFFlightsRet = retSearchedFlights.filter(f => namefilters.indexOf(f.name)>-1)
+            }
+        else{
+            nameFFlightsGo = goSearchedFlights;
+            nameFFlightsRet = retSearchedFlights
+
+        }
+
+        if(filterdtimes.length>0){
+            nameFFlightsGo  = nameFFlightsGo.filter(f => filterdtimes.indexOf(f.dt)>-1)
+            nameFFlightsRet  = nameFFlightsRet.filter(f => filterdtimes.indexOf(f.dt)>-1)
+        }
+         
+        if(filteratimes.length>0){
+            nameFFlightsGo  = nameFFlightsGo.filter(f => filterdtimes.indexOf(f.at)>-1)
+            nameFFlightsRet  = nameFFlightsRet.filter(f => filterdtimes.indexOf(f.at)>-1)
+        }
+           
+        $('.gfr').remove()
+        if(nameFFlightsGo.length>0){
+            let goSearchedFlights = nameFFlightsGo
+            $('.nfilters').remove()
+            for(i = 0; i < nameFFlightsGo.length; i++) {        
+                let ele = 
+                `<div class="row  gfr r-flight-row goflights">
+                <div class="row mt-2">
+                    <div class="col-2 flex-col"> <img src="Images/${goSearchedFlights[i]['img']}.png" width="50px" height="50px" ></div>
+                     <div class="col-3 flex-col rtrip-fname">${goSearchedFlights[i]['name']}</div>                
+                </div>
+                <div class="row mt-2">           
+                    <div class="col flex-col">
+                        <div class=" d-flex justify-content-center pcolor">${goSearchedFlights[i]['source']}</div>
+                        <div class=" d-flex justify-content-center tcolor">${goSearchedFlights[i]['dtime']}</div>
+                    </div>
+                    <div class="col flex-col">${goSearchedFlights[i]['duration']}</div>
+                    <div class="col flex-col">
+                        <div  class=" d-flex justify-content-center pcolor">${goSearchedFlights[i]['dest']}</div>
+                        <div  class="d-flex justify-content-center tcolor">${goSearchedFlights[i]['atime']}</div>
+                    </div>
+                    <div class ="col flex-col">
+                    <button type="button" class="btn btn-outline-primary mbtn" 
+                    data-toggle="modal" data-target="#f${i}">Details</button></div>
+                </div>
+            </div>
+            <div id="f${i}" class="modal fade modalbox" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close btn btn-danger" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">${goSearchedFlights[i]['source']} to ${goSearchedFlights[i]['dest']}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>price: &#8377;${goSearchedFlights[i][fclasssel]}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Book</button>
+                </div>
+                </div>
+            
+            </div>
+            </div>`
+            $('#go').append(ele);
+                
+                
+            }
+        
+        }
+        else{
+            let ele = 
+            `<div class="alert alert-warning alert-dismissible fade show nfilters gon w-50 mt-5 " role="alert">
+            <strong>No flights matches filters</strong>
+            <button type="button" class="close btn btn-outline cbtn" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>'
+            </div>`
+            $('.gon').remove()
+            $('#go').append(ele);
+        }
+        if(nameFFlightsRet.length>0){
+            let retSearchedFlights = nameFFlightsRet
+            $('.nfilters').remove()
+            for(i = 0; i < nameFFlightsRet.length; i++) {
+                let ele = 
+            `<div class="row  gfr r-flight-row retflights">
+                <div class="row mt-2">
+                    <div class="col-2 flex-col"> <img src="Images/${retSearchedFlights[i]['img']}.png" width="50px" height="50px" ></div>
+                    <div class="col-3 flex-col rtrip-fname">${retSearchedFlights[i]['name']}</div>                
+                </div>
+                <div class="row mt-2">           
+                    <div class="col flex-col">
+                        <div class=" d-flex justify-content-center pcolor">${retSearchedFlights[i]['source']}</div>
+                        <div class=" d-flex justify-content-center tcolor">${retSearchedFlights[i]['dtime']}</div>
+                    </div>
+                    <div class="col flex-col">${retSearchedFlights[i]['duration']}</div>
+                    <div class="col flex-col">
+                        <div  class=" d-flex justify-content-center pcolor">${retSearchedFlights[i]['dest']}</div>
+                        <div  class="d-flex justify-content-center tcolor">${retSearchedFlights[i]['atime']}</div>
+                    </div>
+                    <div class ="col flex-col">
+                    <button type="button" class="btn btn-outline-primary mbtn" 
+                    data-toggle="modal" data-target="#r${i}">Details</button></div>
+                </div>
+            </div>
+            <div id="r${i}" class="modal fade modalbox" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close btn btn-danger" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">${retSearchedFlights[i]['source']} to ${retSearchedFlights[i]['dest']}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>price: &#8377;${retSearchedFlights[i][fclasssel]}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Book</button>
+                </div>
+                </div>
+            
+            </div>
+            </div>`
+            $('#ret').append(ele);                                 
+            }       
+        }
+        else{
+            let ele = 
+            `<div class="alert alert-warning alert-dismissible fade show nfilters retno w-50 mt-5 " role="alert">
+            <strong>No flights matches filters</strong>
+            <button type="button" class="close btn btn-outline cbtn" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>'
+            </div>`
+            $('.retno').remove()
+            $('#ret').append(ele);
+        }
+        if(namefilters.length>0|| filteratimes.length>0 || filterdtimes.length>0){
+            $('#clearfilters').removeClass('text-white')
+            $('#clearfilters').addClass('text-primary')
+        }
+        else{
+            $('#clearfilters').removeClass('text-primary')
+            $('#clearfilters').addClass('text-white')
+        }
+    }
+        
 }
 
 $("#clearfilters").click(function(){
@@ -788,6 +944,212 @@ $("#clearfilters").click(function(){
     }
 });
 
+
+function rtripsearch(){
+    $('#content').show()
+    $('#result').hide()
+    $('#restway').show()
+    flightscount ={}
+    $('#clearfilters').removeClass('text-primary')
+    $('#clearfilters').addClass('text-white')
+    goSearcedFlights = []
+    $('.gfr').remove()
+    let sfrom = $('#sfrom').text()
+    let sto = $('#sto').text();
+    if(sfrom == sto){
+        let ele=
+        `<div class="alert alert-warning alert-dismissible fade show sdeq w-50 mt-5 " role="alert">
+        <strong>Source and destination cannot be same</strong>
+        <button type="button" class="close btn btn-outline cbtn" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>'
+        </div>`
+        $('.sdeq').remove()
+        $('.nof').remove()
+        $('#main').append(ele);
+    }
+    else{
+        sfrom = sfrom[0].toUpperCase()+sfrom.slice(1)
+        $('#gosd').text(`Flights from ${sfrom} to ${sto}`)
+        $('#retsd').text(`Flights from ${sto} to ${sfrom}`)
+        goSearchedFlights  = flights.filter(f =>   f.source ==  sfrom & f.dest == sto )
+        retSearchedFlights  = flights.filter(f =>   f.source ==  sto & f.dest == sfrom )
+        if(goSearchedFlights.length>0){
+            $('.nogf').remove()
+            updateRTripGoFlights(sfrom,sto)
+            $('#content').show();
+        }
+        else{
+            $('.fl-count').remove()
+            let ele = 
+            `<div class="alert alert-warning alert-dismissible fade show nogf  mt-5 " id="ngof" role="alert">
+            <strong>No Flights from ${sfrom} to ${sto}</strong>
+            <button type="button" class="close btn btn-outline cbtn" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>'
+            </div>`
+            $('.sdeq').remove()
+            $('.nogf').remove()
+            $('#go').append(ele);
+            $("#ngof").css("margin-left","1%");
+
+        }
+        if(retSearchedFlights.length>0){
+            $('.norf').remove()
+            updateRTripRetFlights(sfrom,sto)
+        }
+        else{
+            $('.fl-count').remove()
+            let ele = 
+            `<div class="alert alert-warning alert-dismissible fade show norf  mt-5 " role="alert" id="nretf">
+            <strong>No Return Flights from ${sto} to ${sfrom}</strong>
+            <button type="button" class="close btn btn-outline cbtn" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>'
+            </div>`
+            $('.nof').remove()
+            $('.norf').remove()
+            $('.sdeq').remove()
+            $('#ret').append(ele);
+            $("#nretf").css("margin-left","1%");
+    
+        }
+        updateAllFilters()
+    }
+}
+
+
+function updateRTripGoFlights(sf,st){
+    let sfrom =sf;
+    let sto = st;
+    $('.nof').remove()
+    $('.nfilters').remove()
+    $('.sdeq').remove()
+    $('.fl-count').remove()
+    for(i = 0; i < goSearchedFlights.length; i++) {
+        let ele =         
+        `<div class="row  gfr r-flight-row goflights">
+            <div class="row mt-2">
+                <div class="col-2 flex-col"> <img src="Images/${goSearchedFlights[i]['img']}.png" width="50px" height="50px" ></div>
+                 <div class="col-3 flex-col rtrip-fname">${goSearchedFlights[i]['name']}</div>                
+            </div>
+            <div class="row mt-2">           
+                <div class="col flex-col">
+                    <div class=" d-flex justify-content-center pcolor">${goSearchedFlights[i]['source']}</div>
+                    <div class=" d-flex justify-content-center tcolor">${goSearchedFlights[i]['dtime']}</div>
+                </div>
+                <div class="col flex-col">${goSearchedFlights[i]['duration']}</div>
+                <div class="col flex-col">
+                    <div  class=" d-flex justify-content-center pcolor">${goSearchedFlights[i]['dest']}</div>
+                    <div  class="d-flex justify-content-center tcolor">${goSearchedFlights[i]['atime']}</div>
+                </div>
+                <div class ="col flex-col">
+                <button type="button" class="btn btn-outline-primary mbtn" 
+                data-toggle="modal" data-target="#f${i}">Details</button></div>
+            </div>
+        </div>
+        <div id="f${i}" class="modal fade modalbox" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close btn btn-danger" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">${goSearchedFlights[i]['source']} to ${goSearchedFlights[i]['dest']}</h4>
+            </div>
+            <div class="modal-body">
+                <p>price: &#8377;${goSearchedFlights[i][fclasssel]}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Book</button>
+            </div>
+            </div>
+        
+        </div>
+        </div>`
+        $('#go').append(ele);
+    }    
+}
+
+function updateRTripRetFlights(from,to){
+    let sfrom = from;
+    let sto = to;
+        $('.nof').remove()
+        $('.nfilters').remove()
+        $('.sdeq').remove()
+        $('.fl-count').remove()
+        for(i = 0; i < retSearchedFlights.length; i++) {
+            let ele = 
+            `<div class="row  gfr r-flight-row retflights">
+                <div class="row mt-2">
+                    <div class="col-2 flex-col"> <img src="Images/${retSearchedFlights[i]['img']}.png" width="50px" height="50px" ></div>
+                    <div class="col-3 flex-col rtrip-fname">${retSearchedFlights[i]['name']}</div>                
+                </div>
+                <div class="row mt-2">           
+                    <div class="col flex-col">
+                        <div class=" d-flex justify-content-center pcolor">${retSearchedFlights[i]['source']}</div>
+                        <div class=" d-flex justify-content-center tcolor">${retSearchedFlights[i]['dtime']}</div>
+                    </div>
+                    <div class="col flex-col">${retSearchedFlights[i]['duration']}</div>
+                    <div class="col flex-col">
+                        <div  class=" d-flex justify-content-center pcolor">${retSearchedFlights[i]['dest']}</div>
+                        <div  class="d-flex justify-content-center tcolor">${retSearchedFlights[i]['atime']}</div>
+                    </div>
+                    <div class ="col flex-col">
+                    <button type="button" class="btn btn-outline-primary mbtn" 
+                    data-toggle="modal" data-target="#r${i}">Details</button></div>
+                </div>
+            </div>
+            <div id="r${i}" class="modal fade modalbox" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close btn btn-danger" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">${retSearchedFlights[i]['source']} to ${retSearchedFlights[i]['dest']}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>price: &#8377;${retSearchedFlights[i][fclasssel]}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Book</button>
+                </div>
+                </div>
+            
+            </div>
+            </div>`
+            $('#ret').append(ele);
+        }
+}
+
+function updateAllFilters(){
+    flightscount={};
+    let ch = document.querySelector('input[name="tripchoice"]:checked').value
+    if(ch == "oway"){
+
+        searchedflights.forEach(function(f){
+        flightscount[f.name]? flightscount[f.name]++ : flightscount[f.name]=1;
+        });
+    }
+    else{
+         goSearchedFlights.forEach(function(f){
+            flightscount[f.name]? flightscount[f.name]++ : flightscount[f.name]=1;
+            });
+        retSearchedFlights.forEach(function(f){
+            flightscount[f.name]? flightscount[f.name]++ : flightscount[f.name]=1;
+            });
+
+    }
+    for (var key in flightscount) {
+        let keym = key.replace(/ /g, '@');
+        let ele = 
+        `<div class="form-check mb-2 fl-count">
+                <input class="form-check-input" type="checkbox" value=${keym} id=${keym} onclick="updatefilters(this)">
+                <label class="form-check-label" for="airindia">
+                ${key}(${flightscount[key]})
+                </label>
+        </div>`
+        $('#flightscount').append(ele)               
+    }
+    $('#clearfilters').addClass('text-white')
+}
 
 
 

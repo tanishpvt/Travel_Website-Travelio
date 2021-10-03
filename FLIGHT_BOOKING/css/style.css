@@ -320,7 +320,7 @@ body {
     left: -80px;
 }
 .fheads{
-
+    background-color: #f4f4f4;
     height: 50px;
     padding: 5px 10px;
     display: flex;
@@ -353,6 +353,11 @@ body {
 .flight-row{
     margin-left: 10px;
     margin-right: 10px;
+
+}
+.r-flight-row{
+    margin-left: 5px;
+    margin-right: 5px;
 
 }
 .lst{
@@ -509,7 +514,7 @@ body{
     margin-right: 1px;
 }
 
-.fr{
+.fr,.gfr{
     margin-bottom: 7px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.125);
@@ -566,8 +571,27 @@ body{
     max-height: 200px !important;
 }
 
-.restway{
-    margin-top: 20px;
-    font-size: 12px;
+.twayheads{
+    background-color: #f4f4f4 ;
 }
 
+.retheadings{
+    margin-top: 30px;
+    padding: 20px;
+    padding-left: 30px;
+    margin-bottom: 20px;
+}
+.ret{
+    margin-left: 20px;
+}
+.twayheads{
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.rtsd{
+    font-weight: bolder;
+}
+.rtrip-fname{
+    font-weight: bolder;
+}
