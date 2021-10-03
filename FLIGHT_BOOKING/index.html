@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking System</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>
+  </head>
+<body>
+    <div class="main" id="main">
+        <div class="header container-fluid">
+            <div class="title">make your trip</div>
+            <div>
+                <button class="btn  text-white login  shadow-none " type="button">Login/Register<span class="material-icons uicon">account_circle</span></button>                    
+            </div>
+        </div>
+        <div class="sbox card">
+            <div class="container-fluid bg-white ways">
+                <div class="form-check form-check-inline tchoice"  id="oway" onchange="radiobgchange()" >
+                    <input class="form-check-input" type="radio" name="tripchoice" id="otrip"  value="oway" checked>
+                    <label class="form-check-label" for="oway">ONEWAY</label>
+                </div>
+                <div class="form-check form-check-inline tchoice"  id="rtrip" onchange="radiobgchange()">
+                    <input class="form-check-input" type="radio" id="roundtrip" name="tripchoice" value="rtrip">
+                    <label class="form-check-label" for="rtrip">ROUND TRIP</label>
+                </div>
+                <div class="form-check form-check-inline tchoice" id="tway" onchange="radiobgchange()">
+                    <input class="form-check-input" type="radio" name="tripchoice"  id="ttrip" value="tway">
+                    <label class="form-check-label" for="tway">MULTI CITY</label>
+                </div>
+            </div>
+            <div class="cbox  border border-secondrary">
+                <div class="card bcard" id="from">
+                    <div class="card-body">
+                      <p class="card-text heads">FROM</p>
+                      <h3 class="card-title" id="sfrom">delhi</h3>
+                      <p class="card-text" id="sfport">delhi,delhi AirPort India</p>                   
+                    </div>
+                </div>
+                <div class="card bcard" >
+                    <div class="card-body" id="to">
+                      <p class="card-text heads">TO</p>
+                      <h3 class="card-title" id="sto">Bangalore</h3>
+                      <p class="card-text" id="stport">BLR,Bangalore Intrenational AirPort India</p>    
+                                    
+                    </div>
+                </div>
+                <div class="card bcard" id="sddate" >
+                    <div class="card-body">
+                      <p class="card-text heads">DEPARTURE<span class="material-icons text-primary darrow" >keyboard_arrow_down</span></p>
+                      <h3 class="card-title dt" id="ddate"></h3>
+                      <p class="card-text day" id="dday"></p>                   
+                    </div>
+                </div>
+                <div class="card bcard" id="srdate">
+                    <div class="card-body">
+                      <p class="card-text heads">RETURN<span class="material-icons text-primary darrow" >keyboard_arrow_down</span></p>
+                      <h3 class="card-title dt" id="rdate"></h3>
+                      <p class="card-text day" id="rday"></p>                  
+                    </div>
+                </div>
+                <div class="card bcard tclass" id="stravels" >
+                    <div class="card-body">
+                      <p class="card-text heads">TRAVELLERS & CLASS<span class="material-icons text-primary darrow">keyboard_arrow_down</span></p>
+                      <h3 class="card-title" id="total_travellers"><span id="travellers"></span> Travellers</h3>
+                      <p class="card-text" id="selected_class">Premium Economy</p>                  
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="date" >
+            <input placeholder="DEPARTURE" class="search form-control " type="date"   id="date1">   
+        </div>
+        <div class="date" >
+            <input placeholder="DEPARTURE" class="search form-control " type="date"   id="date2">   
+        </div>
+        <div id="sbtn">
+            <button type="button" class="btn btn-primary sbtn" id="search" onclick="search()">SEARCH</button>
+        </div>       
+        <div class="fdropdown" id="fdrop"></div>
+        <div class="rdropdown" id="rdrop"></div>
+
+        <div class="travels">
+            <div class="adults">
+                <div class="peopletext"> ADULTS(12 y+)</div>
+                <ul class="adult-list">
+                    <li class="a-li  tt-li" id="a1">1</li>
+                    <li class="a-li li-hover tt-li "id="a2">2</li>
+                    <li class="a-li li-hover tt-li selected" id="a3">3</li>
+                    <li class="a-li li-hover tt-li" id="a4">4</li>
+                    <li class="a-li li-hover tt-li" id="a5">5</li>
+                    <li class="a-li li-hover tt-li" id="a6">6</li>
+                    <li class="a-li li-hover tt-li" id="a7">7</li>
+                    <li class="a-li li-hover tt-li"id="a8">8</li>
+                </ul>
+            </div>
+            <div class="child-infants">
+                <div class="peopletext">CHILDREN(2y-12 y)</div>
+                <ul class="child-list">
+                    <li class="c-li tt-li"id="c0">0</li>
+                    <li class="c-li li-hover tt-li selected "id="c1">1</li>
+                    <li class="c-li li-hover tt-li"id="c2">2</li>
+                    <li class="c-li li-hover tt-li"id="c3">3</li>
+                    <li class="c-li li-hover tt-li"id="c4">4</li>
+                    <li class="c-li li-hover tt-li"id="c5">5</li>
+                    <li class="c-li li-hover tt-li"id="c6">6</li>
+                </ul>
+                <ul class="infant-list">                  
+                    <li class="i-li tt-li" id="i0">0</li>
+                    <li class="i-li li-hover tt-li selected " id="i1">1</li>
+                    <li class="i-li li-hover tt-li" id="i2">2</li>
+                    <li class="i-li li-hover tt-li" id="i3">3</li>
+                    <li class="i-li li-hover tt-li" id="i4">4</li>
+                    <li class="i-li li-hover tt-li" id="i5">5</li>
+                    <li class="i-li li-hover tt-li" id="i6">6</li>
+                </ul>
+            </div>
+            <div class="ctype">
+                <div class="peopletext"> CHOOSE TRAVELL CLASS</div>
+                <ul class="ctype-list">
+                    <li class="t-li selected tt-li" id="tp">Premium Economy</li>
+                    <li class="t-li li-hover tt-li"id="te">Economy</li>
+                    <li class="t-li li-hover tt-li"id="tb">Business</li>
+                </ul>
+            </div>
+        </div>
+
+        
+        
+    </div>   
+    <div class="content row r fil-fli" id="content">
+        <div class="filters col-3 r" id="filter">
+                <div id="clearfilters" class="text-primary d-flex justify-content-end">Clear Filters</div>
+                <div class="flightscount" id="flightscount">
+                    <div class="row"><h5>Airlines</h5></div>                    
+                </div>
+                <h5 class="row mt-4">Departure Time</h5>
+                <div class="row">
+                    <button type="button" class="btn btn-outline-secondary timingb col-2 timef dtime" id="em">
+                        <span class="material-icons d-block">wb_twilight</span>
+                        <p class="card-text timings">Before 6 AM</p>                            
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary timingb col-2  timef dtime" id="m">
+                        <span class="material-icons d-block"> wb_sunny</span>
+                        <p class="card-text timings">6 AM-12 PM</p>                            
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary timingb col-2  timef dtime" id="af">
+                        <span class="material-icons d-block"> cloud_circle</span>
+                        <p class="card-text timings">12 PM-6 PM</p>                            
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary timingb col-2 timef dtime" id="n">
+                        <span class="material-icons d-block">  nights_stay </span>
+                        <p class="card-text timings">After 6 PM</p>                            
+                    </button>
+                </div>               
+                <h5 class="row mt-4">Arrival Time</h5>
+                <div class="row">
+                    <button type="button" class="btn btn-outline-secondary timingb col-2 timef atime" id="em">
+                        <span class="material-icons d-block">wb_twilight</span>
+                        <p class="card-text timings">Before 6 AM</p>                            
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary timingb col-2 timef atime" id="m">
+                        <span class="material-icons d-block"> wb_sunny</span>
+                        <p class="card-text timings">6 AM-12 PM</p>                            
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary timingb col-2 timef atime" id="af">
+                        <span class="material-icons d-block"> cloud_circle</span>
+                        <p class="card-text timings">12 PM-6 PM</p>                            
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary timingb col-2 timef atime" id="n">
+                        <span class="material-icons d-block">  nights_stay </span>
+                        <p class="card-text timings">After 6 PM</p>                            
+                    </button>                                
+                
+                </div>
+        </div>
+        <div class="r results col" id="result">
+            <div class="bg-white res-header mb-2">
+                <div class="row mt-3  fheads">
+                    <div class="col-4 d-flex justify-content-center">Flight</div>
+                    <div class="col d-flex justify-content-center">Departure</div>
+                    <div class="col d-flex justify-content-center">Duration</div>
+                    <div class="col d-flex justify-content-center">Arrival</div>
+                    <div class="col"></div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="rtrip-header restway col" id="restway">
+            <div class="row">
+                <div class="col  go" id="go">
+                    <div class="retheadings bg-white rgohead">
+                        <div class="row rtsd" id="gosd">Flights from x to y</div>
+                        <div class="row twayheads">
+                            <div class="col d-flex justify-content-center reth">Departure</div>
+                            <div class="col d-flex justify-content-center reth">Duration</div>
+                            <div class="col d-flex justify-content-center reth">Arrival</div>
+                            <div class="col d-flex justify-content-center reth">Price</div>
+                        </div>
+                    </div>                   
+                </div>
+                <div class="col ret" id="ret">
+                    <div class="retheadings bg-white rrethead">
+                        <div class="row rtsd" id="retsd">Flights from x to y</div>
+                        <div class="row twayheads">
+                            <div class="col d-flex justify-content-center reth">Departure</div>
+                            <div class="col d-flex justify-content-center reth">Duration</div>
+                            <div class="col d-flex justify-content-center reth">Arrival</div>
+                            <div class="col d-flex justify-content-center reth">Price</div>
+                        </div>
+                    </div>                    
+                </div>
+
+            </div>
+        </div>
+    </div> 
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>   
+</body>
+</html>
