@@ -18,7 +18,6 @@ var total_travellers =adults+children+infants;
 var  toFlights;
 var  fromFlights;
 var searchClicked = false;
-localStorage.clear();
 $('#content').hide();
 $('#travellers').text(total_travellers)
 function radiobgchange(){
@@ -62,6 +61,218 @@ $('#oway > :nth-child(2)').addClass('r-label');
 $("#otrip").attr('checked',true);
 
 
+// const flights  = [
+//     {name:"IndiGo", source:"Delhi", dest:"Mumbai", economyprice:"7500", businessprice:"12500", 
+//     premiumeconomyprice:"5600",duration:"05 h 05 m",dtime:"07:55" ,atime:"13:00",dt:"m",at:"af",'img':'i'},
+
+//    {name:"Spice Jet", source:"Delhi", dest:"Mumbai", economyprice:"6500 ", businessprice:"13500", 
+//     premiumeconomyprice:"5900 ",duration:"07 h 35 m",dtime:"12:40" ,atime:"20:15",dt:"af",at:"n",'img':'sj'},
+
+//     {name:"Spice Jet", source:"Delhi", dest:"Mumbai", economyprice:"6500 ", businessprice:"13500", 
+//     premiumeconomyprice:"5900 ",duration:"02 h 05 m",dtime:"08:00" ,atime:"10:05", dt:"m",at:"m",'img':'sj'},
+
+//  {name:"Air Asia", source:"Delhi", dest:"Bangalore", economyprice:"5500", businessprice:"14500", 
+//     premiumeconomyprice:"6400 ",duration:"06 h 25 m",dtime:"04:55" ,atime:"11:20",dt:"em",at:"m",'img':'aa'},
+
+//  {name:"Spice Jet", source:"Delhi", dest:"Bangalore", economyprice:"7500 ", businessprice:"12900", 
+//     premiumeconomyprice:"7300 ",duration:"05 h 40 m",dtime:"12:40" ,atime:"18:20",dt:"af",at:"n",'img':'sj'},
+
+//  {name:"Spice Jet", source:"Delhi", dest:"Mumbai", economyprice:"5700 ", businessprice:"17500", 
+//     premiumeconomyprice:"8200 ",duration:"02 h 05 m",dtime:"20:30" ,atime:"22:35",dt:"n",at:"n",'img':'sj'},
+
+//  {name:"Air India", source:"Bangalore", dest:"Greater Noida" ,economyprice:"5200 ", businessprice:"12800",
+//      premiumeconomyprice:"5900 ",duration:"05 h 15 m",dtime:"05:50", atime:"11:05",dt:"em",at:"m",'img':'ai'},
+
+// {name:"Air India", source:"Bangalore", dest:"Greater Noida" ,economyprice:"6200", businessprice:"11300",
+//      premiumeconomyprice:"6600 ",duration:"05 h 10 m ",dtime:"09:30", atime:"14:40",dt:"m",at:"af",'img':'ai'},
+
+// {name:"Spice Jet", source:"Bangalore", dest:"Greater Noida" ,economyprice:"6800", businessprice:"13900",
+//      premiumeconomyprice:"7300 ",duration:"05 h 15 m",dtime:"05:50", atime:"11:05",dt:"em",at:"m",'img':'sj'},
+     
+// {name:"Vistara", source:"Bangalore", dest:"Greater Noida" ,economyprice:"7600", businessprice:"14800",
+//      premiumeconomyprice:"5300 ",duration:"06 h 30 m",dtime:"13:25", atime:"19:55",dt:"af",at:"n",'img':'v'},
+
+// {name:"Jet Airlines", source:"Bangalore", dest:"Greater Noida" ,economyprice:"7800", businessprice:"15400",
+//      premiumeconomyprice:"7200 ",duration:"04 h 45 m",dtime:"07:10", atime:"11:55",dt:"m",at:"m",'img':'ja'},
+
+// {name:"Nagraz", source:"Goa", dest:"Mumbai", economyprice:"5300", businessprice:"11800",
+//      premiumeconomyprice:"4800 ",duration:"01 h 15 m",dtime:"06:45", atime:"08:00",dt:"m",at:"m",'img':'n'},
+
+// {name:"Go First", source:"Goa", dest:"Mumbai", economyprice:"5700", businessprice:"13800",
+//      premiumeconomyprice:"5100 ",duration:"01 h 15 m",dtime:"12:45", atime:"14:00",dt:"af",at:"af",'img':'gf'},
+
+// {name:"TruJet", source:"Goa", dest:"Mumbai", economyprice:"6200", businessprice:"12900",
+//      premiumeconomyprice:"5300 ",duration:"01 h 15 m",dtime:"13:15", atime:"14:30",dt:"af",at:"af",'img':'tj'},
+
+// {name:"Air India", source:"Goa", dest:"Mumbai", economyprice:"6900 ", businessprice:"14200",
+//      premiumeconomyprice:"5900 ",duration:"01 h 20 m",dtime:"13:10", atime:"14:30",time :"af",'img':'ai'},
+
+// {name:"Spice Jet",source:"Goa", dest:"Mumbai", economyprice:"7200 ", businessprice:"13800",
+//      premiumeconomyprice:"6200 ",duration:"01 h 15 m",dtime:"19:50", atime:"21:05",dt:"n",at:"n",'img':'sj'},
+
+// {name:"Go first", source:"Nagpur", dest:"Ahmedabad", economyprice:"4700 ", businessprice:"11300", 
+//     premiumeconomyprice:"4400",duration:"02 h",dtime:"16:30" ,atime:"18:30",dt:"af",at:"n",'img':'gf'},
+
+// {name:"Spice Jet", source:"Nagpur", dest:"Ahmedabad", economyprice:"5100 ", businessprice:"13600", 
+//     premiumeconomyprice:"5200",duration:"04 h 20 m",dtime:"06:30" ,atime:"10:50",dt:"m",at:"m",'img':'sj'},
+
+// {name:"Alliance Air", source:"Nagpur", dest:"Ahmedabad", economyprice:"6200 ", businessprice:"13200", 
+//     premiumeconomyprice:"5600",duration:"06 h 50 m",dtime:"10:50" ,atime:"17:40",dt:"m",at:"n",'img':'aa'},
+
+// {name:"Vistara", source:"Nagpur", dest:"Ahmedabad", economyprice:"6700 ", businessprice:"14200", 
+//     premiumeconomyprice:"5300",duration:"05 h 10 m",dtime:"16:30" ,atime:"21:40",dt:"af",at:"n",'img':'v'},
+
+// {name:"Indigo", source:"Nagpur", dest:"Ahmedabad", economyprice:"7300 ", businessprice:"12500", 
+//     premiumeconomyprice:"6100",duration:"09 h 55 m",dtime:"11:45" ,atime:"21:40",dt:"m",at:"n",'img':'i'},
+
+// {name:"Vistara ", source:"Mumbai", dest:"Kolkata", economyprice:"8700", businessprice:"15200", 
+//     premiumeconomyprice:"8500",duration:"02 h 40 m",dtime:"06:10", atime:"08:50",dt:"m",at:"m",'img':'v'},
+
+// {name:"Spice Jet ", source:"Mumbai", dest:"Kolkata", economyprice:"9200", businessprice:"16800", 
+//     premiumeconomyprice:"9100",duration:"05 h 15 m",dtime:"05:45", atime:"11:00",dt:"em",at:"m",'img':'sj'},
+
+// {name:"TruJet ", source:"Mumbai", dest:"Kolkata", economyprice:"7300", businessprice:"13800", 
+//     premiumeconomyprice:"7900",duration:"05 h 10 m",dtime:"16:15", atime:"21:25",dt:"af",at:"n",'img':'tj'},
+
+// {name:"Air India ", source:"Mumbai", dest:"Kolkata", economyprice:"7400", businessprice:"14300", 
+//     premiumeconomyprice:"7600",duration:"7 h 40 m",dtime:"10:45", atime:"18:25",dt:"m",at:"n",'img':'ai'},
+
+// {name:"Air India", source:"Mumbai", dest:"Kolkata", economyprice:"9400", businessprice:"17000", 
+//     premiumeconomyprice:"9300",duration:"10 h 40 m",dtime:"12:50", atime:"23:30",dt:"af",at:"n",'img':'ai'},
+
+// {name:"Air India", source:"Kolkata", dest:"Bhubaneswar", economyprice:"3600 ", businessprice:"9800", 
+//     premiumeconomyprice:"3400",duration:"02 h 45 m",dtime:"07:45" ,atime:"10:30",dt:"m",at:"m",'img':'ai'},
+
+// {name:"Nagraj", source:"Kolkata", dest:"Bhubaneswar", economyprice:"4300 ", businessprice:"11200", 
+//     premiumeconomyprice:"4200",duration:"01 h 15 m",dtime:"06:15" ,atime:"07:30",dt:"m",at:"m",'img':'n'},
+
+// {name:"Spice Jet", source:"Kolkata", dest:"Bhubaneswar", economyprice:"5200 ", businessprice:"12400", 
+//     premiumeconomyprice:"5100",duration:"01 h 10 m",dtime:"18:20" ,atime:"07:45",dt:"n",at:"n",'img':'sj'},
+
+// {name:"Vistara", source:"Kolkata", dest:"Bhubaneswar", economyprice:"6400 ", businessprice:"13200", 
+//     premiumeconomyprice:"5700",duration:"01 h 25 m",dtime:"15:10" ,atime:"16:35",dt:"af",at:"n",'img':'v'},
+
+// {name:"Indigo", source:"Kolkata", dest:"Bhubaneswar", economyprice:"6900 ", businessprice:"13000", 
+//     premiumeconomyprice:"6000",duration:"1 h 45 m",dtime:"20:10",atime:"21:55",dt:"n",at:"n",'img':'i'},
+
+// {name:"TruJet", source:"Hyderabad", dest:"Mumbai" ,economyprice:"4600", businessprice:"10000",
+//      premiumeconomyprice:"4400",duration:"6 h 05 m",dtime:"14:35", atime:"20.40",dt:"af",at:"n",'img':'tj'},
+
+// {name:"Alliance Air", source:"Hyderabad", dest:"Mumbai" ,economyprice:"5700", businessprice:"12300",
+//      premiumeconomyprice:"5200",duration:"01 h 40 m",dtime:"08:00", atime:"09:40",dt:"m",at:"m",'img':'aa'},
+
+// {name:"Vistara", source:"Hyderabad", dest:"Mumbai" ,economyprice:"6800 ", businessprice:"13500",
+//      premiumeconomyprice:"6700",duration:"01 h 15 m",dtime:"08:25", atime:"09:40",dt:"m",at:"m",'img':'v'},
+
+// {name:"Indigo", source:"Hyderabad", dest:"Mumbai" ,economyprice:"7100 ", businessprice:"12900",
+//      premiumeconomyprice:"6300",duration:"01 h 40 m",dtime:"21:45", atime:"23:25",dt:"n",at:"n",'img':'i'},
+
+// {name:"Speed Airlines", source:"Hyderabad", dest:"Mumbai" ,economyprice:"7600 ", businessprice:"14700",
+//      premiumeconomyprice:"6800",duration:"01 h 30 m",dtime:"09:10", atime:"10.40",dt:"m",at:"m",'img':'sa'},
+
+// {name:"Air Asia", source:"Pune", dest:"Delhi", economyprice:"6900", businessprice:"13200",
+//      premiumeconomyprice:"6700",duration:"10 h",dtime:"08:50" ,atime:"18:50",dt:"m",at:"n",'img':'aa'},
+ 
+// {name:"Air Asia", source:"Pune", dest:"Delhi", economyprice:"7300 ", businessprice:"14400",
+//      premiumeconomyprice:"7400",duration:"08 h 05 m",dtime:"14:30" ,atime:"22:35",dt:"af",at:"n",'img':'aa'},
+ 
+// {name:"Air India ", source:"Pune", dest:"Delhi", economyprice:"8100 ", businessprice:"14900",
+//      premiumeconomyprice:"7600",duration:"06 h",dtime:"08:50" ,atime:"14:50",dt:"m",at:"af",'img':'ai'},
+
+// {name:"Vistara", source:"Pune", dest:"Delhi", economyprice:"8400 ", businessprice:"15300",
+//      premiumeconomyprice:"8200",duration:"02 h 05 m",dtime:"11:30" ,atime:"13:35",dt:"m",at:"af",'img':'v'},
+
+// {name:"Air India", source:"Pune", dest:"Delhi", economyprice:"9000 ", businessprice:"16100",
+//      premiumeconomyprice:"8800",duration:"02 h",dtime:"19:30" ,atime:"21:30",dt:"n",at:"n",'img':'ai'},
+
+// {name:"Air Asia", source:"Greater Noida", dest:"Hyderabad",economyprice:"3700 ", businessprice:"8300",
+//      premiumeconomyprice:"3500",duration:"07 h 55 m",dtime:"04:55", atime:"12:50",dt:"em",at:"af",'img':'aa'},
+
+// {name:"Spice Jet", source:"Greater Noida", dest:"Hyderabad",economyprice:"5300", businessprice:"10700",
+//      premiumeconomyprice:"3800",duration:"01 h 50 m",dtime:"20:20", atime:"22:10",dt:"n",at:"n",'img':'sj'},
+
+// {name:"Go First", source:"Greater Noida", dest:"Hyderabad",economyprice:"4700", businessprice:"9700",
+//      premiumeconomyprice:"4100",duration:"06 h 30 m",dtime:"05:50", atime:"12.20",dt:"em",at:"af",'img':'gf'},
+
+// {name:"Indigo", source:"Greater Noida", dest:"Hyderabad",economyprice:"5900", businessprice:"12200",
+//      premiumeconomyprice:"6200",duration:"02 h 10 m",dtime:"07:10", atime:"09:20",dt:"m",at:"m",'img':'i'},
+
+// {name:"Air Asia", source:"Greater Noida", dest:"Hyderabad",economyprice:"7200 ", businessprice:"13900",
+//      premiumeconomyprice:"7100",duration:"02 h 15 m",dtime:"11:35", atime:"16:10",dt:"m",at:"af",'img':'aa'},
+
+// {name:"Spice Jet", source:"Hyderabad", dest:"Mumbai", economyprice:"5600 ", businessprice:"11700",
+//      premiumeconomyprice:"5300",duration:"02 h 20 m",dtime:"20:35", atime:"22:55",dt:"n",at:"n",'img':'sj'},
+
+// {name:"Air India", source:"Hyderabad", dest:"Mumbai", economyprice:"6700 ", businessprice:"12800",
+//      premiumeconomyprice:"4900",duration:"02 h 05 m ",dtime:"17:45", atime:"19:50",dt:"n",at:"n",'img':'ai'},
+
+// {name:"Spice Jet", source:"Hyderabad", dest:"Mumbai", economyprice:"7400 ", businessprice:"13400",
+//      premiumeconomyprice:"5800",duration:"02 h 10 m",dtime:"16:20", atime:"18:30",dt:"af",at:"n",'img':'sj'},
+
+// {name:"Vistara", source:"Hyderabad", dest:"Mumbai", economyprice:"6500 ", businessprice:"13100",
+//      premiumeconomyprice:"6700 ",duration:"05 h 10 m",dtime:"07:10", atime:"12:20",dt:"m",at:"af",'img':'v'},
+
+//  {name:"Indigo", source:"Hyderabad", dest:"Mumbai", economyprice:"8000 ", businessprice:"15800",
+//      premiumeconomyprice:"7000 ",duration:"01 h 40 m",dtime:"18:10", atime:"19:40",dt:"n",at:"n",'img':'i'},
+
+// {name:"Air Asia", source:"Bangalore", dest:"Indore" ,economyprice:"4400 ", businessprice:"9700",
+//      premiumeconomyprice:"4200 ",duration:"05 h",dtime:"16:25", atime:"21:50",dt:"af",at:"n",'img':'aa'},
+
+// {name:"Indigo", source:"Bangalore", dest:"Indore" ,economyprice:"5300 ", businessprice:"10800",
+//      premiumeconomyprice:"5600 ",duration:"02 h",dtime:"12:50", atime:"14:50",dt:"af",at:"af",'img':'aa'},
+
+// {name:"Spice Jet", source:"Bangalore", dest:"Indore" ,economyprice:"4400 ", businessprice:"9700",
+//      premiumeconomyprice:"4200 ",duration:"07 h 40 m",dtime:"12:25", atime:"20:05",dt:"af",at:"n",'img':'sj'},
+
+// {name:"Air India", source:"Bangalore", dest:"Indore" ,economyprice:"5300 ", businessprice:"10800",
+//      premiumeconomyprice:"5600 ",duration:"06 h 35 m",dtime:"14:50", atime:"21:25",dt:"af",at:"n",'img':'ai'},
+
+// {name:"Spice Jet", source:"Bhubaneswar", dest:"Bangalore " ,economyprice:"9800", businessprice:"16600",
+//      premiumeconomyprice:" 9500",duration:"06 h 35 m",dtime:"09:15", atime:"15:50",dt:"m",at:"af",'img':'sj'},
+
+// {name:"Vistara ", source:"Bhubaneswar", dest:"Bangalore " ,economyprice:"8700", businessprice:"15400",
+//      premiumeconomyprice:" 8800",duration:" 02 h 15 m",dtime:"05:55", atime:"08:10",dt:"em",at:"m",'img':'v'},
+
+// {name:"Indigo", source:"Bhubaneswar", dest:"Bangalore " ,economyprice:"10000", businessprice:"17800",
+//      premiumeconomyprice:" 9700",duration:"02 h",dtime:"12:15", atime:"14:15",dt:"af",at:"af",'img':'i'},
+
+// {name:"Spice Jet", source:"Bangalore", dest:"Delhi", economyprice:"7300 ", businessprice:"13800",
+//      premiumeconomyprice:"7100 ",duration:"02 h",dtime:"17:20" ,atime:"19:20",dt:"af",at:"n",'img':'sj'}, 
+
+// {name:"TruJet", source:"Bangalore", dest:"Delhi", economyprice:"8400", businessprice:"14600",
+//      premiumeconomyprice:"7900 ",duration:"02 h 40 m ",dtime:"07:45" ,atime:"10:25",dt:"m",at:"m",'img':'tj'},
+
+// {name:"Indigo", source:"Bangalore", dest:"Delhi", economyprice:"9100 ", businessprice:"15900",
+//      premiumeconomyprice:"8900 ",duration:"02 h 45 m",dtime:"12:55" ,atime:"15:40",dt:"af",at:"af",'img':'i'}, 
+
+// {name:"Indigo", source:"Bangalore", dest:"Delhi", economyprice:"8600 ", businessprice:"14700",
+//      premiumeconomyprice:"8400 ",duration:"05 h 15 m",dtime:"05:50" ,atime:"11:05",dt:"em",at:"m",'img':'i'}, 
+
+// {name:"Air Asia", source:"Bangalore", dest:"Delhi", economyprice:"6700 ", businessprice:"15400",
+//      premiumeconomyprice:"9300 ",duration:"02 h 45 m",dtime:"14:35" ,atime:"17:20",dt:"af",at:"n",'img':'aa'}, 
+
+// {name:"Air Asia", source:"Indore", dest:"Greater Noida ",economyprice:"6600 ", businessprice:"16300", 
+//     premiumeconomyprice:"6300 ",duration:"01 h 30 m",dtime:"12:10", atime:"14:25",dt:"af",at:"af",'img':'aa'},
+
+// {name:"Air India", source:"Indore", dest:"Greater Noida ",economyprice:"7400 ", businessprice:"15500", 
+//     premiumeconomyprice:"5900 ",duration:"03 h 10 m",dtime:"10:20", atime:"13:30",dt:"m",at:"af",'img':'ai'}, 
+
+// {name:"Spice Jet", source:"Mumbai", dest:"Bangalore", economyprice:"6800 ", businessprice:"14200",
+//      premiumeconomyprice:"6400 ",duration:"01 h 40 m",dtime:"17:45",atime:"19:25",dt:"n",at:"n",'img':'sj'},
+
+// {name:"Indigo", source:"Mumbai", dest:"Bangalore", economyprice:"7600 ", businessprice:"13800",
+//      premiumeconomyprice:"7300 ",duration:"03 h 35 m ",dtime:"14:30",atime:"18:05",dt:"af",at:"n",'img':'i'},
+
+// {name:"TruJet", source:"Mumbai", dest:"Bangalore", economyprice:"6400 ", businessprice:"13500",
+//      premiumeconomyprice:"7500 ",duration:"02 h 05 m",dtime:"19:50",atime:"22:55",dt:"n",at:"n",'img':'tj'},
+
+// {name:"Air Asia", source:"Bangalore", dest:"Pune", economyprice:"8600 ", businessprice:"16400",
+//      premiumeconomyprice:"8000 ",duration:"01 h 30 m",dtime:"08:50", atime:"10:20",dt:"m",at:"m",'img':'aa'},
+
+// {name:"TruJet", source:"Bangalore", dest:"Pune", economyprice:"8900 ", businessprice:"16000",
+//      premiumeconomyprice:"8200 ",duration:"01 h 40 m",dtime:"15:15", atime:"16:55",dt:"af",at:"af",'img':'tj'},
+
+// ]
 
 const  flights =[
     {
@@ -1260,12 +1471,10 @@ $("#to").click(function(){
     }
 });
 
-var fromport = "Delhi AirPort India";
-var toport = "Bangalore Intrenational AirPort India";
+
 function updatefrom(stn){
     let place = $(stn).find("#fplace").text();
     let port =  $(stn).find("#fport").text();
-    fromport = port;
     $("#sfrom").text(place)
     $("#sfport").text(port)
     $("#fdrop").hide()
@@ -1275,7 +1484,6 @@ function updatefrom(stn){
 function updateto(stn){
     let place = $(stn).find("#tplace").text();
     let port =  $(stn).find("#tport").text();
-    toport= port;
     $("#sto").text(place)
     $("#stport").text(port)
     $("#rdrop").hide()
@@ -1370,21 +1578,14 @@ $(".i-li").click(function(){
     $('#travellers').text(total_travellers)
 })
 var fclasssel = "premiumeconomyprice"
-var infoclass = "premium"
 $(".t-li").click(function(){
     let clsel= $(this).attr('id')
-    if(clsel =="tp"){
+    if(clsel =="tp")
     fclasssel ="premiumeconomyprice"
-    infoclass= "Premium"
-    }
-    else if(clsel =="tb"){
+    else if(clsel =="tb")
     fclasssel ="businessprice"
-    infoclass = "Business"
-    }
-    else if(clsel =="te"){
+    else if(clsel =="te")
     fclasssel ="economyprice"
-    infoclass = "Economy"
-    }
     let sclass = $(this).text()
     $('#selected_class').text(sclass)
 })
@@ -1500,9 +1701,6 @@ function updateFlights(){
             $('.sdeq').remove()
             $('.fl-count').remove()
             $('.fdelbtn').remove()
-            fclasssel ="economyprice"
-            fclasssel ="businessprice"
-            fclasssel ="premiumeconomyprice"
             for(i = 0; i < searchedflights.length; i++) {
                 f = JSON.stringify(searchedflights[i]);
                 let ele = 
@@ -1518,82 +1716,32 @@ function updateFlights(){
                         '<div  class=" d-flex justify-content-center pcolor">'+searchedflights[i]['dest']+'</div>'+
                         '<div  class="d-flex justify-content-center tcolor">'+searchedflights[i]['atime']+'</div>'+
                     '</div>'+
-                    `<div class ="col flex-col detailsbtn" id="${searchedflights[i]['fno']}">
-                    <button type="button" class="btn  mbtn viewdetails">Details</button>
-                    </div>
-                <div class="flightdetails"  id=${i}>
-                    <div class="row infohead drow1">
-                        <div class="col ">Fares</div>
-                        <div class="col">Cabin bag</div>
-                        <div class="col">Check-in</div>
-                        <div class="col">Cancellation</div>
-                        <div class="col col-2">Date Change</div>
-                        <div class="col">Seat</div>
-                        <div class="col">Meal</div>
-                        <div class="col col-2"></div>                      
-                    </div>
-                    <div class="row info detailsrow drow2">
-                        <div class="col fare">${infoclass + "  "+"Saver"}</div>
-                        <div class="col">7 Kgs</div>
-                        <div class="col">15 Kgs</div>
-                        <div class="col">Cancellation Fee Starting ₹ 3,500 upto 2 hrs before departure</div>
-                        <div class="col">Date Change fee starting ₹ 3,000 upto 2 hrs before departure</div>
-                        <div class="col">Chargeable</div>
-                        <div class="col">Chargeable</div>
-                        <div class="col col-2 detailedprice">
-                            <div class="d-block "><span>&#8377;</span> ${searchedflights[i][fclasssel]}</div>
-                            <a  href="pages/bookingsaver.html" target="_blank"class=" btn btn-primary bookbtn">Book Now</a>
-                        </div>
-                      
-                    </div>
-                    <div class="row info detailsrow">
-                        <div class="col fare">${infoclass +" "+ "Flex"}</div>
-                        <div class="col">7 Kgs</div>
-                        <div class="col">15 Kgs</div>
-                        <div class="col">Cancellation Fee Starting ₹ 3,500 upto 2 hrs before departure</div>
-                        <div class="col">Free Date change allowed upto 2 hrs before departure</div>
-                        <div class="col">Free seats available</div>
-                        <div class="col">Complimentary meals (No meal will be served if flight duration is less than 2 hours)</div>
-                        <div class="col col-2 detailedprice">
-                            <div><span>&#8377;</span>${+searchedflights[i][fclasssel]+2000}</div>
-                            <a href="pages/bookingflex.html" target="_blank" class=" btn btn-primary bookbtn">Book Now</a>
-                        </div>
-                    </div>
-                    </div>
-                </div>`
+                    '<div class ="col flex-col">'+
+                    '<button type="button" class="btn btn-outline-primary mbtn" '+
+                    'data-toggle="modal" data-target="#f'+i+'">Details</button></div>'+
+                    '<div class="btn btn-primary"  class="fdelbtn" id="'+searchedflights[i]['fno']+'"> Detail Info</div>'+
+                '</div> <br>'
+                
+            //     `<div id="f${i}" class="modal fade modalbox" role="dialog">
+            //     <div class="modal-dialog">
+            //       <div class="modal-content">
+            //         <div class="modal-header">
+            //           <button type="button" class="close btn btn-danger" data-dismiss="modal">&times;</button>
+            //           <h4 class="modal-title">${searchedflights[i]['source']} to ${searchedflights[i]['dest']}</h4>
+            //         </div>
+            //         <div class="modal-body">
+            //           <p>price: &#8377;${searchedflights[i][fclasssel]}</p>
+            //         </div>
+            //         <div class="modal-footer">
+            //           <button type="button" class="btn btn-success" data-dismiss="modal">Book</button>
+            //         </div>
+            //       </div>
+              
+            //     </div>
+            //   </div>`
                 $('#result').append(ele);
-            }
-            $('.flightdetails').hide()
+            }   
 
-            $(".detailsbtn").click(function(e) {
-               let  fno = $(this).attr("id")
-                console.log(fno)
-                let id = $(this).next().attr('id');
-                console.log(id)
-           
-                if ($(this).parent().next().css("visibility")!="show"){
-                    // ($(this).parent().next().css("visibility","show"))
-
-                    $('.flightdetails').hide()
-                    $("#" + id).show() 
-                    localStorage.setItem('fid', fno);
-                    localStorage.setItem('fport', fromport); 
-                    localStorage.setItem('tport', toport);
-                    localStorage.setItem('children', +children);
-                    localStorage.setItem('infants', +infants);
-                    localStorage.setItem('adults', +adults);  
-                              
-                }
-                else{
-                    // ($(this).parent().next().css("visibility","visible"))
-                    // $('.flightdetails').hide()
-                    $("#" + id).hide()
-                    // $(this).parent().next().hide()
-                    
-                    // localStorage.setItem('fid', fno);
-                }
-    
-            });  
             
             $("#restway").hide()
             updateAllFilters()
@@ -1635,14 +1783,24 @@ function applyNameTimeFilters(){
                         '<div  class=" d-flex justify-content-center pcolor">'+nameFFlights[i]['dest']+'</div>'+
                         '<div  class="d-flex justify-content-center tcolor">'+nameFFlights[i]['atime']+'</div>'+
                     '</div>'+
-                    '<div class ="col flex-col">'+
-                    `<button type="button" class="btn btn-outline-primary " id="${nameFFlights[i]['fno']}"
-                    onClick = "finfo(this)"
-                    
-                    >Details</button>
-                    </div>`+
-                   
+                    '<div class ="col flex-col"><button type="button" class="btn btn-outline-primary">Details</button></div>'+
                 '</div>'+
+                `<div id="f${i}" class="modal fade modalbox" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                        <button type="button" class="close btn btn-danger" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">${searchedflights[i]['source']} to ${searchedflights[i]['dest']}</h4>
+                        </div>
+                        <div class="modal-body">
+                        <p>price: &#8377;${searchedflights[i][fclasssel]}</p>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Book</button>
+                        </div>
+                        </div>              
+                    </div>
+                 </div>`
                 
                 $('#result').append(ele);
             }
@@ -1711,21 +1869,36 @@ function applyNameTimeFilters(){
                     <div class="col flex-col">
                         <div  class=" d-flex justify-content-center pcolor">${goSearchedFlights[i]['dest']}</div>
                         <div  class="d-flex justify-content-center tcolor">${goSearchedFlights[i]['atime']}</div>
-                    </div>`+
-                    '<div class ="col flex-col">'+
-                    `<button type="button" class="btn btn-outline-primary mbtn" id="${goSearchedFlights[i]['fno']}"
-                         onClick = "finfo(this)">Details
-                    </button>
                     </div>
+                    <div class ="col flex-col">
+                    <button type="button" class="btn btn-outline-primary mbtn" 
+                    data-toggle="modal" data-target="#f${i}">Details</button></div>
                 </div>
-                </div>`
+            </div>
+            <div id="f${i}" class="modal fade modalbox" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close btn btn-danger" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">${goSearchedFlights[i]['source']} to ${goSearchedFlights[i]['dest']}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>price: &#8377;${goSearchedFlights[i][fclasssel]}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Book</button>
+                </div>
+                </div>
+            
+            </div>
+            </div>`
             $('#go').append(ele);
                 
                 
             }
         
         }
-        else if(nameFFlightsRet.length<=0){
+        else{
             let ele = 
             `<div class="alert alert-warning alert-dismissible fade show nfilters gon w-50 mt-5 " role="alert">
             <strong>No flights matches filters</strong>
@@ -1755,20 +1928,33 @@ function applyNameTimeFilters(){
                     <div class="col flex-col">
                         <div  class=" d-flex justify-content-center pcolor">${retSearchedFlights[i]['dest']}</div>
                         <div  class="d-flex justify-content-center tcolor">${retSearchedFlights[i]['atime']}</div>
-                    </div>`+
-                    '<div class ="col flex-col">'+
-                    `<button type="button" class="btn btn-outline-primary mbtn" id="${retSearchedFlights[i]['fno']}"
-                    onClick = "finfo(this)"
-                    
-                    >Details</button>
-                    </div>                    
+                    </div>
+                    <div class ="col flex-col">
+                    <button type="button" class="btn btn-outline-primary mbtn" 
+                    data-toggle="modal" data-target="#r${i}">Details</button></div>
+                </div>
+            </div>
+            <div id="r${i}" class="modal fade modalbox" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close btn btn-danger" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">${retSearchedFlights[i]['source']} to ${retSearchedFlights[i]['dest']}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>price: &#8377;${retSearchedFlights[i][fclasssel]}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Book</button>
                 </div>
                 </div>
+            
+            </div>
             </div>`
             $('#ret').append(ele);                                 
             }       
         }
-        else if(nameFFlightsGo.length<=0){
+        else{
             let ele = 
             `<div class="alert alert-warning alert-dismissible fade show nfilters retno w-50 mt-5 " role="alert">
             <strong>No flights matches filters</strong>
@@ -1885,7 +2071,6 @@ function rtripsearch(){
 function updateRTripGoFlights(sf,st){
     let sfrom =sf;
     let sto = st;
-    
     $('.nof').remove()
     $('.nfilters').remove()
     $('.sdeq').remove()
@@ -1906,14 +2091,28 @@ function updateRTripGoFlights(sf,st){
                 <div class="col flex-col">
                     <div  class=" d-flex justify-content-center pcolor">${goSearchedFlights[i]['dest']}</div>
                     <div  class="d-flex justify-content-center tcolor">${goSearchedFlights[i]['atime']}</div>
-                </div>`+
-                '<div class ="col flex-col">'+
-                `<button type="button" class="btn btn-outline-primary mbtn" id="${goSearchedFlights[i]['fno']}"
-                onClick = "finfo(this)"
-                
-                >Details</button>
-                </div>                   
+                </div>
+                <div class ="col flex-col">
+                <button type="button" class="btn btn-outline-primary mbtn" 
+                data-toggle="modal" data-target="#f${i}">Details</button></div>
             </div>
+        </div>
+        <div id="f${i}" class="modal fade modalbox" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close btn btn-danger" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">${goSearchedFlights[i]['source']} to ${goSearchedFlights[i]['dest']}</h4>
+            </div>
+            <div class="modal-body">
+                <p>price: &#8377;${goSearchedFlights[i][fclasssel]}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Book</button>
+            </div>
+            </div>
+        
+        </div>
         </div>`
         $('#go').append(ele);
     }    
@@ -1942,13 +2141,28 @@ function updateRTripRetFlights(from,to){
                     <div class="col flex-col">
                         <div  class=" d-flex justify-content-center pcolor">${retSearchedFlights[i]['dest']}</div>
                         <div  class="d-flex justify-content-center tcolor">${retSearchedFlights[i]['atime']}</div>
-                    </div>`+
-                    '<div class ="col flex-col">'+
-                    `<button type="button" class="btn btn-outline-primary mbtn" id="${retSearchedFlights[i]['fno']}"
-                    onClick = "finfo(this)"                    
-                    >Details</button>
-                    </div>                       
+                    </div>
+                    <div class ="col flex-col">
+                    <button type="button" class="btn btn-outline-primary mbtn" 
+                    data-toggle="modal" data-target="#r${i}">Details</button></div>
                 </div>
+            </div>
+            <div id="r${i}" class="modal fade modalbox" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close btn btn-danger" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">${retSearchedFlights[i]['source']} to ${retSearchedFlights[i]['dest']}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>price: &#8377;${retSearchedFlights[i][fclasssel]}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Book</button>
+                </div>
+                </div>
+            
+            </div>
             </div>`
             $('#ret').append(ele);
         }
@@ -1991,21 +2205,6 @@ $(".fdelbtn").click(function(){
     console.log(sid)
 
 })
-
-function finfo(e){
-    console.log(e)
-    console.log($(e).attr("id"))
-   
-
-}
-
-// function showFDeatils(e){
-//     let id = $(e).attr('id')
-//     localStorage.setItem('fid', id);
-
-// }
-
-
 
 
 

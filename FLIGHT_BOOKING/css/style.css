@@ -250,6 +250,22 @@ body {
     padding-left: 0px;
 
 }
+.sbtn {
+    border-radius: 34px;
+    background-image: linear-gradient(93deg,#53b2fe,#065af3);
+    box-shadow: 0 1px 7px 0 rgba(0,0,0,.2);
+    display: inline-block;
+    flex-shrink: 0;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    text-align: center;
+}
+.sbtn:hover{
+    color: white;
+}
 .filters{
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.125);
@@ -594,4 +610,93 @@ body{
 }
 .rtrip-fname{
     font-weight: bolder;
+}
+
+
+.infohead{
+        display: flex;
+        padding: 10px 0;
+        background-color: #f3f6f9;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 11px;
+        color: #4a4a4a;
+       
+}
+
+.info{
+    background-color:white;
+    color: rgba(0,0,0,.85);
+    margin-top: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+ 
+ }
+.flightdetails{
+    margin-top: 20px;
+    z-index: 30;
+    font-size: 12px;
+    background-color: #e5eef4;
+    width: 100% !important;
+}
+
+.bookbtn{
+    background-image: linear-gradient(97deg,#53b2fe,#065af3 130%);
+    display: flex;
+    border-radius: 35px;
+    box-shadow: 0 1px 7px 0 rgba(0,0,0,.22);
+    cursor: pointer;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    padding: 0 20px;
+    border: none;
+    outline: none!important;
+    font-weight: 500;
+}
+
+.detailedprice{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 16px;
+    gap:10px;
+  
+
+
+
+
+}
+.bookbtn:hover{
+    color: white;
+}
+.mbtn:hover{
+    color: #008cff;
+}
+.viewdetails{
+
+        border: 1px solid #008cff;
+        border-radius: 96px;
+        color: #008cff;
+        background: #daebff;
+        font-weight: 700;
+        font-size: 13px;
+        position: relative;
+        padding: 0 8px;
+        height: 31px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        cursor: pointer;
+        width: 120px;
+
+}
+.fare{
+    font-weight:700;
+    font-size: 14px;
+    text-transform: capitalize;
 }

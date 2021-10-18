@@ -1,0 +1,74 @@
+body, html {
+    background: #e5eef4;
+    color: rgba(0,0,0,.85);
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+.header{
+    background-image: linear-gradient(to bottom, rgba(6,3,40), rgb(18,58,105)); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    color: white;
+    font-size: 12px !important;
+    height: 200px;
+    
+}
+.nav{  
+        font-family: 'Kanit', sans-serif;
+        font-size: 25px;
+        color: #008cff;
+        height: 60px;
+        padding-left: 40px !important;
+        padding-top: 10px;
+}
+
+.completebooking{    
+    font-size: 27px ;
+    padding-left: 40px;
+    padding-top: 40px ;
+    
+    
+}
+
+.content{
+    background: #e5eef4;
+  
+
+}
+
+.l-box{
+    background: white;
+    /* width: 680px; */
+    /* height: 200px; */
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,.1);
+    border-radius: 2px;
+    color: blue;
+    margin-left: 40px;
+    margin-right: 20px;
+    position: relative;
+    top:-100px;
+    padding: 10px;
+
+}
+.r-box{
+    background: white;
+    /* width: 680px; */
+    /* height: 200px; */
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,.1);
+  
+    border-radius: 2px;
+    color: blue;
+    position: relative;
+    top:-100px;
+    padding: 10px;
+    
+
+}
+.rcontent{
+    display: flex;
+    justify-content: space-between;
+    color: black;
+}
