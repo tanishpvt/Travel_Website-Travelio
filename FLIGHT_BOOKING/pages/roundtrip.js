@@ -1050,7 +1050,8 @@ const  flights =[
     }
 ]
 
-var flightno = localStorage.getItem('fid');
+var flightno = localStorage.getItem('gofid');
+var flightno2 = localStorage.getItem('retfid');
 var fport = localStorage.getItem('fport');
 var tport = localStorage.getItem('tport');
 var  adults = +localStorage.getItem('adults');
@@ -1062,6 +1063,7 @@ var fport = localStorage.getItem('fport');
 var tport = localStorage.getItem('tport');
 fromdate= JSON.parse(fromdate)
 searchedflights  = flights.filter(f =>   f.fno == flightno)
+searchedflights2 = flights.filter(f =>   f.fno == flightno2)
 var showfaredetails = false;
 var showcharges = false;
 var showcharity = false;
@@ -1069,8 +1071,10 @@ if(type=="premium"){
     type="premiumeconomy"
 }
 var adultprice = searchedflights[0][type+'price']
-adultprice = +adultprice;
-adultprice = adultprice + 2000;
+adultprice = +adultprice
+var adultprice2 = searchedflights2[0][type+'price']
+adultprice2 = +adultprice2
+adultprice = adultprice+adultprice2
 
 var totalprice = +adults*adultprice
 var grandtotal = totalprice+20+768
@@ -1097,7 +1101,7 @@ document.getElementById("day").innerHTML = fromdate['day'];
 document.getElementById("month").innerHTML = fromdate['month'];
 document.getElementById("date").innerHTML = fromdate['date'];
 document.getElementById("type").innerHTML = type;
-document.getElementById("saver").innerHTML = type+"Flex";
+document.getElementById("saver").innerHTML = type+"Saver";
 document.getElementById("stime").innerHTML = searchedflights[0]['dtime'];
 document.getElementById("splace").innerHTML = searchedflights[0]['source'];
 document.getElementById("sport").innerHTML = ". " +fport;
@@ -1106,11 +1110,21 @@ document.getElementById("dplace").innerHTML = searchedflights[0]['dest'];
 document.getElementById("dport").innerHTML = ". " +tport;
 document.getElementById("sduration").innerHTML = searchedflights[0]['duration'];
 document.getElementById("fname").innerHTML = searchedflights[0]['name'];
+document.getElementById("logo2").src ="../images/"+searchedflights2[0]['img']+".png"
+document.getElementById("fname2").innerHTML = searchedflights2[0]['name'];
 document.getElementById("logo").src ="../images/"+searchedflights[0]['img']+".png"
 document.getElementById("totalprice").innerHTML = "&#8377;" +totalprice;
 document.getElementById("pereach").innerHTML = "&#8377;" + " "+adultprice;
 document.getElementById("pricecalc").innerHTML = "Adult(s) (" + adults +" X " +"&#8377;"+" "+adultprice +")";
 document.getElementById("grandtotal").innerHTML = "&#8377;" + grandtotal
+document.getElementById("stime2").innerHTML = searchedflights2[0]['dtime'];
+document.getElementById("splace2").innerHTML = searchedflights2[0]['source'];
+document.getElementById("sport2").innerHTML = ". " +fport;
+document.getElementById("dtime2").innerHTML = searchedflights2[0]['atime'];
+document.getElementById("dplace2").innerHTML = searchedflights2[0]['dest'];
+document.getElementById("dport2").innerHTML = ". " +tport;
+document.getElementById("sduration2").innerHTML = searchedflights2[0]['duration'];
+
 $("#farehide").hide()
 $("#chargehide").hide()
 $("#charityhide").hide()

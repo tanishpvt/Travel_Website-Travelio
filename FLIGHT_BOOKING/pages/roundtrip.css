@@ -138,21 +138,21 @@ body, html {
     cursor: pointer;
 
 }
-#namelclass{
+#namelclass,#namelclass2{
     display: flex;
     justify-content: space-between;
     align-items: center;
 
 }
 
-#fname{
+#fname,#fname2{
     font-size: 14px;
     font-weight: 700;
     align-self: center;
     margin-left: 20px;
 }
 
-#fnamelogo{
+#fnamelogo,#fnamelogo2{
     display: flex;
     justify-content: space-between;
     margin: 10px 16px;
@@ -456,4 +456,8 @@ input[type]:focus{
     color: #eb2026;
     padding-top: 3px;
     font-size: 12px;
+}
+.rtrip{
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

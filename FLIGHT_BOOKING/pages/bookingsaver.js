@@ -1053,30 +1053,197 @@ const  flights =[
 var flightno = localStorage.getItem('fid');
 var fport = localStorage.getItem('fport');
 var tport = localStorage.getItem('tport');
-var  adults = localStorage.getItem('adults');
+var  adults = +localStorage.getItem('adults');
 var children = localStorage.getItem('children');
 var infants = localStorage.getItem('infants');
+var fromdate = localStorage.getItem('date1');
+var type = localStorage.getItem('clstype').toLowerCase();
+var fport = localStorage.getItem('fport');
+var tport = localStorage.getItem('tport');
+fromdate= JSON.parse(fromdate)
 searchedflights  = flights.filter(f =>   f.fno == flightno)
+var showfaredetails = false;
+var showcharges = false;
+var showcharity = false;
+if(type=="premium"){
+    type="premiumeconomy"
+}
+var adultprice = searchedflights[0][type+'price']
+
+var totalprice = +adults*adultprice
+var grandtotal = totalprice+20+768
+
 
 // $('#from').text(searchedflights[0]['source'])
 // $('#to').text(searchedflights[0]['dest'])
 // document.getElementById("from").innerHTML = searchedflights[0]['source'];
 // document.getElementById("to").innerHTML = searchedflights[0]['dest'];
 
-console.log('retrievedObject: ',flightno );
-console.log(searchedflights)
-console.log(fport)
-console.log(tport)
-console.log(adults)
-console.log(children)
-console.log(infants)
+// console.log('retrievedObject: ',flightno );
+// console.log(searchedflights)
+// console.log(fport)
+// console.log(tport)
+// console.log(adults)
+// console.log(children)
+// console.log(infants)
 
 window.onload = function() {
-    document.getElementById("from").innerHTML = searchedflights[0]['source'];
+document.getElementById("from").innerHTML = searchedflights[0]['source'];
 document.getElementById("to").innerHTML = searchedflights[0]['dest'];
-document.getElementById("fare").innerHTML = searchedflights[0]['businessprice'];
+document.getElementById("duration").innerHTML = searchedflights[0]['duration'];
+document.getElementById("day").innerHTML = fromdate['day'];
+document.getElementById("month").innerHTML = fromdate['month'];
+document.getElementById("date").innerHTML = fromdate['date'];
+document.getElementById("type").innerHTML = type;
+document.getElementById("saver").innerHTML = type+"Saver";
+document.getElementById("stime").innerHTML = searchedflights[0]['dtime'];
+document.getElementById("splace").innerHTML = searchedflights[0]['source'];
+document.getElementById("sport").innerHTML = ". " +fport;
+document.getElementById("dtime").innerHTML = searchedflights[0]['atime'];
+document.getElementById("dplace").innerHTML = searchedflights[0]['dest'];
+document.getElementById("dport").innerHTML = ". " +tport;
+document.getElementById("sduration").innerHTML = searchedflights[0]['duration'];
+document.getElementById("fname").innerHTML = searchedflights[0]['name'];
+document.getElementById("logo").src ="../images/"+searchedflights[0]['img']+".png"
+document.getElementById("totalprice").innerHTML = "&#8377;" +totalprice;
+document.getElementById("pereach").innerHTML = "&#8377;" + " "+adultprice;
+document.getElementById("pricecalc").innerHTML = "Adult(s) (" + adults +" X " +"&#8377;"+" "+adultprice +")";
+document.getElementById("grandtotal").innerHTML = "&#8377;" + grandtotal
+$("#farehide").hide()
+$("#chargehide").hide()
+$("#charityhide").hide()
+$("#faretoggle").click(function() {
+  $("#farehide").toggle()
+  $("#pereach").toggle()
+  if(showfaredetails == false){
+      $("#fareicon").html("remove_circle_outline")
+  }
+  else{
+    $("#fareicon").html("add_circle_outline")
+  }
+  showfaredetails = !showfaredetails
+  })
+$("#chargetoggle").click(function() {
+    $("#chargehide").toggle()
+    $("#chargeamt").toggle()
+    if(showcharges == false){
+        $("#chargeicon").html("remove_circle_outline")
+    }
+    else{
+        $("#chargeicon").html("add_circle_outline")
+    }
+    showcharges = !showcharges
+    })
+
+$("#charitytoggle").click(function() {
+    $("#charityhide").toggle()
+    $("#charityamt").toggle()
+    if(showcharity == false){
+        $("#charityicon").html("remove_circle_outline")
+    }
+    else{
+        $("#charityicon").html("add_circle_outline")
+    }
+    showcharity = !showcharity
+    })
+
+    $(".errormsg").hide()
+    $(".genlbl").click(function(){
+        $("#gendererror").hide();
+
+    })
+    $("#continue").click(function(){
+        namehandle();
+        emailhandle();
+        mobilehandle();
+        if($('#f').prop('checked')||$('#f').prop('checked')){
+             $("#gendererror").hide()
+        }
+        else{
+            $("#gendererror").show()
+
+        }
+        if($('#nameerror').is(':hidden') && $('#mobileerror').is(':hidden') && $('#emailerror').is(':hidden')
+         && $('#gendererror').is(':hidden')){
+            let a= document.createElement('a');
+            a.href= 'thanku.html';
+            a.click();
+
+        }
+       
+    })
+
+    $("#fmname").change(function(){
+        namehandle()        
+    })
+    $("#fmname").keyup(function () {
+        namehandle()    
+    });
+
+    function namehandle(){
+        if((!$("#fmname").val())){
+            $("#nameerror").show()
+            $("#nameerror").html("First & Middle Name is required")       
+        }
+        else if($("#fmname").val().length<3){
+            $("#nameerror").show() 
+            $("#nameerror").html("Name Should be minimum of 3 characters")
+        
+        }
+        else{
+            $("#nameerror").hide()
 
 
-   
+        }
+        
+    }
+    function validateEmail(email) { 
+        var emailRegex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return emailRegex.test(email);
+    }
+    
+    function validateMobile(phone) {
+        var phoneRegex = /^(\+91-|\+91|0)?\d{10}$/; 
+        return phoneRegex.test(phone);
+    }
+    function emailhandle(){
+        if((!$("#bookemail").val())){
+            $("#emailerror").show()
+            $("#emailerror").html("Email is required")       
+        }
+        else if(!validateEmail($("#bookemail").val())){
+            $("#emailerror").show() 
+            $("#emailerror").html("Please enter valid email")        
+        }
+        else{
+            $("#emailerror").hide()  
+        }            
+    }
+    function mobilehandle(){
+        console.log($("#mobileno").val()) 
+        if((!$("#mobileno").val())){
+            $("#mobileerror").show()
+            $("#mobileerror").html("Mobile number is required")       
+        }
+        else if(!validateMobile($("#mobileno").val())){
+            $("#mobileerror").show() 
+            $("#mobileerror").html("Please enter valid mobile number")        
+        }
+        else{
+            $("#mobileerror").hide()  
+        }            
+    }
+    $("#bookemail").change(function(){
+        emailhandle()        
+    })
+    $("#bookemail").keyup(function () {
+        emailhandle()    
+    });
+    $("#mobileno").change(function(){
+        mobilehandle()        
+    })
+    $("#mobileno").keyup(function () {
+        mobilehandle()    
+    });
 
 }

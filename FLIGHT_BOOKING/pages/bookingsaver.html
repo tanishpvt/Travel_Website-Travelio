@@ -24,46 +24,265 @@
     </div>
     <div class="content">
         <div class="row">
-            <div class="col col-8  l-box">
-                <div> 
-                    <span id="from"></span>
-                    <span class="material-icons">
-                        arrow_forward
-                        </span>
-                 
-                    <span id="to">x</span>                
-                </div>
-                <form>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div> <br><br>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Mobile Number</label>
-                      <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Mobile Number">
-                    </div> <br>
-                    <div class="form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            <div class="col col-8  l-box" id="l-box">
+                <div id="l-box1">
+                    <div class="fdetail-policy">
+                        <div class="date-detail"> 
+                            <div class="fromto">
+                                <h2>
+                                    <span id="from"></span>
+                                    <span>
+                                        &#8594;                     
+                                    </span>                 
+                                    <span id="to"></span>                                    
+                                </h2>            
+                            </div>
+                            <div class="date-duration">
+                                <div class="date">
+                                    <span id="day"></span>
+                                    <span id="month"></span>              
+                                    <span id="date"></span>                                        
+                                </div>
+                                <span class="duaration" id="duration"></span>  
+                               
+                            </div>
+                        </div>                        
+                        <div class="rpolicy">
+                            <div class="refund">Cancellation Fees Apply</div>
+                            <div class="faredetails">View Fare Rules</div>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
+                    <div id="namelclass">
+                        <div id="fnamelogo">
+                            <img src="" id="logo" width="50px" height="50px" alt="">
+                            <div id="fname"></div>
+                        </div>
+                        <div id="ctype"><span id="type"></span>><b><span id="saver"></span></b></div>
+                    </div>
 
+                    <div class="l-box2">
+                        <div id="timeplaceport">
+                            <div id="srcdetails">
+                                <div class="time-circle">
+                                    <span class="time" id="stime"></span>
+                                    <span class="circle"></span>
+                                </div>
+                                <div class="placeport">
+                                    <span class="place" id="splace"></span>
+                                    <span class="port" id="sport"></span>
+                                </div>
+                            </div>                                               
+                        </div>
+                        <div class="duration">
+                            <div id="sduration"></div>
+    
+                        </div>
+                        <div id="timeplaceport">
+                            <div id="srcdetails">
+                                <div class="time-circle">
+                                    <span class="time" id="dtime"></span>
+                                    <span class="circle"></span>
+                                </div>
+                                <div class="placeport">
+                                    <span class="place" id="dplace"></span>
+                                    <span class="port" id="dport"></span>
+                                </div>
+                            </div>                                               
+                        </div>    
+                    </div>                                       
+                </div>               
             </div>
             <div class="col col-3 r-box">
                 <h3>Fare Summary</h3>
-                <div class="rcontent">
-                    <div id="faretext">Base Fare</div>                   
-                    <div id="fare"></div>
-
+                <div class="farewrapper">
+                    <div class="fareRow pointer " id="faretoggle">
+                        <div class="fareleft">
+                            <span class="appendRight10 appendTop5">
+                                <span class="material-icons" id="fareicon">add_circle_outline</span>
+                            </span>
+                            <span class="fareheader" id="basefare">Base Fare</span>
+                        </div>
+                        <span class="fareright" id="pereach"></span>
+                    </div>
+                    <div class="farehidden" id="farehide">
+                        <div class="farehdeatils">
+                            <p class="fareRow ">                           
+                                 <span id="pricecalc"></span>
+                                <span id="totalprice"></span>                              
+                            </p>
+                        </div>
+                    </div>         
                 </div>
-                
+                <div class="farewrapper">
+                    <div class="fareRow pointer " id="chargetoggle">
+                        <div class="fareleft">
+                            <span class="appendRight10 appendTop5">
+                                <span class="material-icons" id="chargeicon">add_circle_outline</span>
+                            </span>
+                            <span class="fareheader chead" id="chargehead">Fee and Surcharges</span>
+                        </div>
+                        <span class="fareright" id="chargeamt">&#8377; 768</span>
+                    </div>
+                    <div class="chargehidden" id="chargehide">
+                        <div class="farehdeatils">
+                            <p class="fareRow ">                           
+                                 <span id="chargecalc">Total fee & Surcharges:</span>
+                                <span id="chargeprice">&#8377; 768</span>                              
+                            </p>
+                        </div>
+                    </div>         
+                </div>
+                <div class="farewrapper">
+                    <div class="fareRow pointer " id="charitytoggle">
+                        <div class="fareleft">
+                            <span class="appendRight10 appendTop5">
+                                <span class="material-icons" id="charityicon">add_circle_outline</span>
+                            </span>
+                            <span class="fareheader chead" id="charityhead">Other Services</span>
+                        </div>
+                        <span class="fareright" id="charityamt">&#8377; 20</span>
+                    </div>
+                    <div class="chargehidden" id="charityhide">
+                        <div class="farehdeatils">
+                            <p class="fareRow ">                           
+                                 <span id="charitycalc">Charity</span>
+                                <span id="chargeprice">&#8377;20</span>                              
+                            </p>
+                        </div>
+                    </div>         
+                </div>
+                <div class="farefooter">
+                    <p class="fareRow">
+                        <span class="totalhead" id="totalhead">Total Amount</span>
+                        <span class="totalamount" id="grandtotal"></span>
+                    </p>
+                </div>                                          
             </div>
         </div>
+        <div class="row">
+            <div class="col col-8">
+                <div class="lboxfullrefund">
+                    <div class="freeinfo">
+                        <strong >100% refund on flight cancellations guaranteed.</strong>
+                    </div>
+                    <div class="free">On Covid + cases. No questions asked . #MMTPromise
+                        <span class="freeknowmore">Know More</span>
+                    </div>
+                </div>
 
-    </div>
+            </div>
 
-    
+        </div>
+        <div class="row">
+            <div class="col col-8">         
+                <div class="mandinfo">
+                <div class="importantInfoTop">
+                    <h2 class="fontSize18 blackFont appendBottom12">Important Information</h2>
+                </div>
+                <p class="blackFont fonSize makeFlex hrtlCenter appendLeft20">
+                    <span class="bgProperties icon20 appendRight10" style="background-image: url(&quot;https://imgak.mmtcdn.com/flights/assets/media/dt/rta_assets/imp-info.png&quot;);"></span>
+                    Mandatory check-list for passengers
+                </p>
+                <ul class="infoList">
+                    <li>Vaccination requirements : <b> None. </b> </li>
+                    <li>COVID test requirements : <b>Passengers arriving from rest of the states -
+                        Symptomatic passengers arriving from any state must carry a negative RT-PCR test report
+                        with a sample taken within 72 hours before arrival. <font color="#008000">
+                        Negative RT-PCR test report is NOT required for asymptomatic passengers travelling from any other
+                        states except Maharashtra and Kerala to Karnataka. </font></b><br><b>Passengers arriving from 
+                        Maharashtra and Kerala. All passengers entering Karnataka from Maharashtra and Kerala must carry a 
+                        negative RT-PCR test report with a sample taken within 72 hours before arrival. RT-PCR Test timeline 
+                        starts from the swab collection time.</b></li><li>Passengers travelling to Karnataka might not be 
+                        allowed to board their flights if they are not carrying a valid test report. </li>
+                    <li>Pre-registration or e-Pass requirements : <b>Download and update Aarogya Setu app </b> </li>
+                    <li>Quarantine Guidelines : <b> Seven days of Institutional Quarantine for
+                        all students/employees &amp; Seven days of Home Quarantine for all other passengers arriving
+                        from Kerala to Karnataka is mandatory.</b> </li>
+                    <li>Destination Restrictions : <b>A lockdown is in effect at the moment, however, 
+                        flight operations remain unaffected during this time. Please check the latest state guidelines 
+                        before travelling. </b> </li>
+                    <li>Remember to web check-in before arriving at the airport; carry a printed or soft copy of the 
+                        boarding pass.</li>
+                    
+                    <li>Please reach at least 2 hours prior to flight departure.</li>
+                    <li><u><b>The latest DGCA guidelines state that it is compulsory to wear a mask that covers the nose 
+                        and mouth properly while at the airport and on the flight.
+                        Any lapse might result in de-boarding.</b></u><a class="anone"> Know More</a></li>
+                    <li>Remember to download the baggage tag(s) and affix it on your bag(s).</li>
+                </ul>
+              
+                <p class="blackFont fonSize makeFlex hrtlCenter appendLeft20">
+                    <strong class="mandhead">Baggage information</strong> 
+                </p>
+                <ul class="infoList">
+                    <li>Carry no more than 1 check-in baggage and 1 hand baggage per passenger. 
+                        Additional pieces of Baggage will be subject to additional charges per piece 
+                        in addition to the excess baggage charges.
+                    </li>
+                </ul>
+                <p class="blackFont fonSize makeFlex hrtlCenter appendLeft20">
+                    <strong class="mandhead"> Note on Guidelines</strong></p>                
+                <ul class="infoList">
+                    <li>Disclaimer: The information provided above is only for ready reference and convenience of customers, and may not be exhaustive. We strongly recommend that you check the full text of the guidelines issued by the State Governments before travelling. MakeMyTrip accepts no liability in this regard.            
+                    </li>
+                </ul>
+            </div>
+        </div>
+       </div>
+
+       <div class="row">
+           <div class="col col-8 passengerdetails">
+               <div><h2 id="travh">Traveller Details</h2></div>
+                <div class="pform">
+                    <div class="textinput" style="width: 30%;">
+                        <div class="relative">
+                            <input autocomplete="none" placeholder="First &amp; Middle Name" id="fmname" type="text" value="">
+                            <p class="nameerror errormsg" id="nameerror">First &amp; Middle Name is required.</p>
+                        </div>
+                    </div>                            
+                    <div class="textinput" style="width: 30%;margin-left: 10px;">
+                        <div class="relative">
+                            <input autocomplete="none" placeholder="Last Name"  id="lname" type="text" value="">
+                        </div>
+                    </div>
+                    <div class="addadult" >
+                        <div class="gender">
+                            <label id="mlbl" class="lbl genlbl">
+                                <input type="radio" name="gender" id="m"value="MALE">
+                                <span class="radiobox gendr" id="male">MALE</span>
+                            </label>
+                            <label id="flbl" class="lbl genlbl">
+                                <input type="radio" name="gender"  id="f" value="FEMALE">
+                                <span class="radiobox gendr" id="female">FEMALE</span>
+                            </label>
+                        </div>
+                        <p class="gendererror errormsg" id="gendererror">Please Select Gender</p>
+                    </div>
+                </div>
+           </div>
+       </div>
+
+       <div class="row">
+           <div class="contactdetails col col-8">
+            <p class="contacthead">Booking details will be sent to</p>
+            <div class="cform">
+                <div class="textinput"  id="mobile" style="width: 30%;">
+                    <label>Mobile No</label>
+                    <input autocomplete="none" placeholder="Mobile No" id="mobileno" type="text" >
+                    <p class="mobileerror errormsg" id="mobileerror">Mobile No is required.</p>
+                </div>
+                <div class="textinput" id="email" style="width: 30%;">
+                    <label>Email</label>
+                    <input autocomplete="none" placeholder="Email" id="bookemail" class=""  type="email" >
+                    <p class="emailerror errormsg" id="emailerror">Email is required.</p>
+                </div>
+               </div>    
+            </div>           
+        </div>
+        <div class="row">
+            <button class="button continue" id="continue">Continue</button>
+        </div>
+    </div>   
 </body>
 </html>
+

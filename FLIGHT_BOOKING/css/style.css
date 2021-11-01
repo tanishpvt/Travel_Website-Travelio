@@ -676,7 +676,7 @@ body{
 .mbtn:hover{
     color: #008cff;
 }
-.viewdetails{
+.viewdetails,.rtripbtn{
 
         border: 1px solid #008cff;
         border-radius: 96px;
@@ -699,4 +699,15 @@ body{
     font-weight:700;
     font-size: 14px;
     text-transform: capitalize;
+}
+.goradio,.retradio{
+    width: 22px;
+    height: 22px;
+    position: relative;
+    left: 50px;
+}
+.sfilters{
+    position: relative;
+    left: 250px;
+    margin-bottom: 0;
 }

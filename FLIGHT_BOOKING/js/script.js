@@ -10,9 +10,9 @@ var searchedflights =[];
 var goSearchedFlights = [];
 var  retSearchedFlights = [];
 var flightscount = {};
-var  adults = 3;
-var children = 1;
-var infants = 1;
+var  adults = 1;
+var children = 0;
+var infants = 0;
 var slectedClass= "Premium Economy"
 var total_travellers =adults+children+infants;
 var  toFlights;
@@ -1139,6 +1139,9 @@ var airports = [
     {"city" : "Goa" ,"name":" Dabolim Goa International Airport"},     
 ]
 
+fromdate ={}
+todate ={}
+
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var today = new Date();
 var date = today.getDate()
@@ -1148,6 +1151,9 @@ var month = today.toLocaleString('default', { month: 'short' });
 var year = today.getFullYear();
 year = year.toString().substr(-2);
 var d1 = date + " " +month +"'"+year;
+fromdate.day=day;
+fromdate.date = date;
+fromdate.month = month;
 today.setDate(today.getDate() + 1);
 var tdate = today.getDate()
 var tday = today.getDay();
@@ -1155,11 +1161,17 @@ tday = days[tday]
 var tmonth = today.toLocaleString('default', { month: 'short' });
 var tyear = today.getFullYear();
 tyear = tyear.toString().substr(-2);
+todate.day=tday;
+todate.date = tdate;
+todate.month = tmonth;
 var d2 = tdate +" "+ tmonth +"'"+ tyear;
 $("#ddate").text(d1);
 $("#rdate").text(d2);
 $("#dday").text(day);
 $("#rday").text(tday);
+
+
+
 
 $("#date1").change(function(){
     temp = $("#date1").val();
@@ -1168,6 +1180,9 @@ $("#date1").change(function(){
     var day = today.getDay();
     day = days[day]
     var month = today.toLocaleString('default', { month: 'short' });
+    fromdate.day=day;
+    fromdate.date = date;
+    fromdate.month = month
     var year = today.getFullYear();
     year = year.toString().substr(-2);
     let d1 = date + " " +month +"'"+year;
@@ -1181,6 +1196,9 @@ $("#date2").change(function(){
     var day = today.getDay();
     day = days[day]
     var month = today.toLocaleString('default', { month: 'short' });
+    todate.day=day;
+    todate.date = date;
+    todate.month = month;
     var year = today.getFullYear();
     year = year.toString().substr(-2);
     let d1 = date + " " +month +"'"+year;
@@ -1370,7 +1388,7 @@ $(".i-li").click(function(){
     $('#travellers').text(total_travellers)
 })
 var fclasssel = "premiumeconomyprice"
-var infoclass = "premium"
+var infoclass = "Premium"
 $(".t-li").click(function(){
     let clsel= $(this).attr('id')
     if(clsel =="tp"){
@@ -1444,6 +1462,7 @@ function search(){
         }
     }
     else{
+        $('.fr').remove()
         goSearchedFlights = []
         retSearchedFlights =[]
         nameFFlightsGo = []
@@ -1568,12 +1587,8 @@ function updateFlights(){
             $(".detailsbtn").click(function(e) {
                let  fno = $(this).attr("id")
                 console.log(fno)
-                let id = $(this).next().attr('id');
-                console.log(id)
-           
+                let id = $(this).next().attr('id');           
                 if ($(this).parent().next().css("visibility")!="show"){
-                    // ($(this).parent().next().css("visibility","show"))
-
                     $('.flightdetails').hide()
                     $("#" + id).show() 
                     localStorage.setItem('fid', fno);
@@ -1581,8 +1596,15 @@ function updateFlights(){
                     localStorage.setItem('tport', toport);
                     localStorage.setItem('children', +children);
                     localStorage.setItem('infants', +infants);
-                    localStorage.setItem('adults', +adults);  
-                              
+                    localStorage.setItem('adults', +adults);
+                    localStorage.setItem('clstype', infoclass);
+                    localStorage.setItem('fport', fromport);
+                    localStorage.setItem('tport', toport);
+                    localStorage.setItem('date1', JSON.stringify(fromdate));
+                    localStorage.setItem('date2', JSON.stringify(todate));  
+                    
+                    
+                   
                 }
                 else{
                     // ($(this).parent().next().css("visibility","visible"))
@@ -1595,8 +1617,8 @@ function updateFlights(){
     
             });  
             
-            $("#restway").hide()
-            updateAllFilters()
+        $("#restway").hide()
+        updateAllFilters()
 }
 
 
@@ -1635,17 +1657,81 @@ function applyNameTimeFilters(){
                         '<div  class=" d-flex justify-content-center pcolor">'+nameFFlights[i]['dest']+'</div>'+
                         '<div  class="d-flex justify-content-center tcolor">'+nameFFlights[i]['atime']+'</div>'+
                     '</div>'+
-                    '<div class ="col flex-col">'+
-                    `<button type="button" class="btn btn-outline-primary " id="${nameFFlights[i]['fno']}"
-                    onClick = "finfo(this)"
-                    
-                    >Details</button>
-                    </div>`+
+                    `<div class ="col flex-col detailsbtn" id="${searchedflights[i]['fno']}">
+                    <button type="button" class="btn  mbtn viewdetails">Details</button>
+                    </div>
+                <div class="flightdetails"  id=${i}>
+                    <div class="row infohead drow1">
+                        <div class="col ">Fares</div>
+                        <div class="col">Cabin bag</div>
+                        <div class="col">Check-in</div>
+                        <div class="col">Cancellation</div>
+                        <div class="col col-2">Date Change</div>
+                        <div class="col">Seat</div>
+                        <div class="col">Meal</div>
+                        <div class="col col-2"></div>                      
+                    </div>
+                    <div class="row info detailsrow drow2">
+                        <div class="col fare">${infoclass + "  "+"Saver"}</div>
+                        <div class="col">7 Kgs</div>
+                        <div class="col">15 Kgs</div>
+                        <div class="col">Cancellation Fee Starting ₹ 3,500 upto 2 hrs before departure</div>
+                        <div class="col">Date Change fee starting ₹ 3,000 upto 2 hrs before departure</div>
+                        <div class="col">Chargeable</div>
+                        <div class="col">Chargeable</div>
+                        <div class="col col-2 detailedprice">
+                            <div class="d-block "><span>&#8377;</span> ${searchedflights[i][fclasssel]}</div>
+                            <a  href="pages/bookingsaver.html" target="_blank"class=" btn btn-primary bookbtn">Book Now</a>
+                        </div>
+                      
+                    </div>
+                    <div class="row info detailsrow">
+                        <div class="col fare">${infoclass +" "+ "Flex"}</div>
+                        <div class="col">7 Kgs</div>
+                        <div class="col">15 Kgs</div>
+                        <div class="col">Cancellation Fee Starting ₹ 3,500 upto 2 hrs before departure</div>
+                        <div class="col">Free Date change allowed upto 2 hrs before departure</div>
+                        <div class="col">Free seats available</div>
+                        <div class="col">Complimentary meals (No meal will be served if flight duration is less than 2 hours)</div>
+                        <div class="col col-2 detailedprice">
+                            <div><span>&#8377;</span>${+searchedflights[i][fclasssel]+2000}</div>
+                            <a href="pages/bookingflex.html" target="_blank" class=" btn btn-primary bookbtn">Book Now</a>
+                        </div>
+                    </div>
+                    </div>
+
                    
-                '</div>'+
+                </div>`
                 
                 $('#result').append(ele);
             }
+            $('.flightdetails').hide()
+
+            $(".detailsbtn").click(function(e) {
+               let  fno = $(this).attr("id")
+                let id = $(this).next().attr('id');           
+                if ($(this).parent().next().css("visibility")!="show"){
+                    $('.flightdetails').hide()
+                    $("#" + id).show() 
+                    localStorage.setItem('fid', fno);
+                    localStorage.setItem('fport', fromport); 
+                    localStorage.setItem('tport', toport);
+                    localStorage.setItem('children', +children);
+                    localStorage.setItem('infants', +infants);
+                    localStorage.setItem('adults', +adults);
+                    localStorage.setItem('clstype', infoclass);
+                    localStorage.setItem('fport', fromport);
+                    localStorage.setItem('tport', toport);
+                    localStorage.setItem('date1', JSON.stringify(fromdate));
+                    localStorage.setItem('date2', JSON.stringify(todate));                      
+                   
+                }
+                else{
+                    $("#" + id).hide()
+                 
+                }
+    
+            });  
         
         }
         else{
@@ -1700,7 +1786,10 @@ function applyNameTimeFilters(){
                 `<div class="row  gfr r-flight-row goflights">
                 <div class="row mt-2">
                     <div class="col-2 flex-col"> <img src="Images/${goSearchedFlights[i]['img']}.png" width="50px" height="50px" ></div>
-                     <div class="col-3 flex-col rtrip-fname">${goSearchedFlights[i]['name']}</div>                
+                     <div class="col-3 flex-col rtrip-fname">${goSearchedFlights[i]['name']}</div>
+                     <div class="form-check col flex-col">
+                         <input class="form-check-input goradio" type="radio" name="retflight" id="${"g"+retSearchedFlights[i]['fno']}" value="" >
+                     </div>                 
                 </div>
                 <div class="row mt-2">           
                     <div class="col flex-col">
@@ -1712,17 +1801,41 @@ function applyNameTimeFilters(){
                         <div  class=" d-flex justify-content-center pcolor">${goSearchedFlights[i]['dest']}</div>
                         <div  class="d-flex justify-content-center tcolor">${goSearchedFlights[i]['atime']}</div>
                     </div>`+
-                    '<div class ="col flex-col">'+
-                    `<button type="button" class="btn btn-outline-primary mbtn" id="${goSearchedFlights[i]['fno']}"
-                         onClick = "finfo(this)">Details
-                    </button>
-                    </div>
+                  `<div class ="col flex-col  rtripgobtn" id="${goSearchedFlights[i]['fno']}">
+                    <button type="button" class="btn  mbtn viewdetails">Book</button>
+                    </div> 
+                                      
                 </div>
                 </div>`
-            $('#go').append(ele);
-                
+            $('#go').append(ele);                
                 
             }
+            $(".rtripgobtn").click(function(e) {
+                gofid = $(this).attr("id");
+                goflighselected = true;
+                $("#g"+gofid).prop('checked',true)
+                if(goflighselected && retflightselected){
+                    $('.sfilters').remove()
+                    handlertripbooking()
+                }
+                else{
+                    let ele = 
+                    `<div class="alert alert-warning alert-dismissible fade show sfilters w-50 mt-5 " role="alert">
+                    <strong>Select both go & return flights</strong>
+                    <button type="button" class="close btn btn-outline cbtn" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>'
+                    </div>`
+                    $('#main').append(ele);
+                }                   
+             });
+             $(".goradio").click(function(e){
+                goflighselected = true;
+                radioid = $(this).attr("id");
+                gofid = radioid.substring(1);
+        
+             });    
+             
         
         }
         else if(nameFFlightsRet.length<=0){
@@ -1744,7 +1857,10 @@ function applyNameTimeFilters(){
             `<div class="row  gfr r-flight-row retflights">
                 <div class="row mt-2">
                     <div class="col-2 flex-col"> <img src="Images/${retSearchedFlights[i]['img']}.png" width="50px" height="50px" ></div>
-                    <div class="col-3 flex-col rtrip-fname">${retSearchedFlights[i]['name']}</div>                
+                    <div class="col-3 flex-col rtrip-fname">${retSearchedFlights[i]['name']}</div>
+                    <div class="form-check col flex-col">
+                        <input class="form-check-input retradio" type="radio" name="retflight" id="${"r"+retSearchedFlights[i]['fno']}" value="" >
+                   </div>                
                 </div>
                 <div class="row mt-2">           
                     <div class="col flex-col">
@@ -1756,17 +1872,40 @@ function applyNameTimeFilters(){
                         <div  class=" d-flex justify-content-center pcolor">${retSearchedFlights[i]['dest']}</div>
                         <div  class="d-flex justify-content-center tcolor">${retSearchedFlights[i]['atime']}</div>
                     </div>`+
-                    '<div class ="col flex-col">'+
-                    `<button type="button" class="btn btn-outline-primary mbtn" id="${retSearchedFlights[i]['fno']}"
-                    onClick = "finfo(this)"
-                    
-                    >Details</button>
-                    </div>                    
+                    `<div class ="col flex-col rtripretbtn" id="${retSearchedFlights[i]['fno']}">
+                    <button type="button" class="btn  mbtn viewdetails">Book</button>
+                    </div>               
                 </div>
-                </div>
+            
             </div>`
             $('#ret').append(ele);                                 
-            }       
+            }
+            $(".rtripretbtn").click(function(e) {
+                retfid = $(this).attr("id");  
+                retflighselected = true;
+                $("#r"+retfid).prop('checked',true)
+                if(goflighselected && retflightselected){
+                    $(".sfiltes").remove()
+                    handlertripbooking()
+                }
+                else{
+                    let ele = 
+                    `<div class="alert alert-warning alert-dismissible fade show sfilters w-50 mt-5 " role="alert">
+                    <strong>Select both go & return flights</strong>
+                    <button type="button" class="close btn btn-outline cbtn" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>'
+                    </div>`
+                    $('#main').append(ele);
+                }                   
+             });  
+             $(".retradio").click(function(e){
+                retflighselected = true;
+                radioid = $(this).attr("id");
+                retfid = radioid.substring(1);
+        
+             });      
+                  
         }
         else if(nameFFlightsGo.length<=0){
             let ele = 
@@ -1807,7 +1946,10 @@ $("#clearfilters").click(function(){
     }
 });
 
-
+var gofid;
+var retfid;
+var goflightselected = false;
+var retflightselected = false;
 function rtripsearch(){
     $('#content').show()
     $('#result').hide()
@@ -1895,7 +2037,10 @@ function updateRTripGoFlights(sf,st){
         `<div class="row  gfr r-flight-row goflights">
             <div class="row mt-2">
                 <div class="col-2 flex-col"> <img src="Images/${goSearchedFlights[i]['img']}.png" width="50px" height="50px" ></div>
-                 <div class="col-3 flex-col rtrip-fname">${goSearchedFlights[i]['name']}</div>                
+                 <div class="col-3 flex-col rtrip-fname">${goSearchedFlights[i]['name']}</div>
+                 <div class="form-check col flex-col">
+                      <input class="form-check-input goradio " type="radio" name="goflight" id="${"g"+goSearchedFlights[i]['fno']}" value="" >
+                 </div>                
             </div>
             <div class="row mt-2">           
                 <div class="col flex-col">
@@ -1907,16 +2052,39 @@ function updateRTripGoFlights(sf,st){
                     <div  class=" d-flex justify-content-center pcolor">${goSearchedFlights[i]['dest']}</div>
                     <div  class="d-flex justify-content-center tcolor">${goSearchedFlights[i]['atime']}</div>
                 </div>`+
-                '<div class ="col flex-col">'+
-                `<button type="button" class="btn btn-outline-primary mbtn" id="${goSearchedFlights[i]['fno']}"
-                onClick = "finfo(this)"
-                
-                >Details</button>
-                </div>                   
+                `<div class ="col flex-col  rtripgobtn" id="${goSearchedFlights[i]['fno']}">
+                <button type="button" class="btn  mbtn viewdetails">Book</button>
+                </div>            
             </div>
         </div>`
         $('#go').append(ele);
-    }    
+    }
+    $(".rtripgobtn").click(function(e) {
+        gofid = $(this).attr("id");
+        goflightselected = true;
+        $("#g"+gofid).prop('checked',true)
+        if(goflightselected && retflightselected){
+            $(".sfilters").remove()
+            handlertripbooking()
+        }
+        else{
+            let ele = 
+            `<div class="alert alert-warning alert-dismissible fade show sfilters w-50 mt-5 " role="alert">
+            <strong>Select both go & return flights</strong>
+            <button type="button" class="close btn btn-outline cbtn" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>'
+            </div>`
+            $('#main').append(ele);
+            
+        }                   
+     });
+     $(".goradio").click(function(e){
+        goflightselected = true;
+        radioid = $(this).attr("id");
+        gofid = radioid.substring(1);
+
+     });     
 }
 
 function updateRTripRetFlights(from,to){
@@ -1931,7 +2099,10 @@ function updateRTripRetFlights(from,to){
             `<div class="row  gfr r-flight-row retflights">
                 <div class="row mt-2">
                     <div class="col-2 flex-col"> <img src="Images/${retSearchedFlights[i]['img']}.png" width="50px" height="50px" ></div>
-                    <div class="col-3 flex-col rtrip-fname">${retSearchedFlights[i]['name']}</div>                
+                    <div class="col-3 flex-col rtrip-fname">${retSearchedFlights[i]['name']}</div>
+                    <div class="form-check col flex-col">
+                      <input class="form-check-input retradio" type="radio" name="retflight" id="${"r"+retSearchedFlights[i]['fno']}" value="" >
+                     </div>                 
                 </div>
                 <div class="row mt-2">           
                     <div class="col flex-col">
@@ -1943,15 +2114,38 @@ function updateRTripRetFlights(from,to){
                         <div  class=" d-flex justify-content-center pcolor">${retSearchedFlights[i]['dest']}</div>
                         <div  class="d-flex justify-content-center tcolor">${retSearchedFlights[i]['atime']}</div>
                     </div>`+
-                    '<div class ="col flex-col">'+
-                    `<button type="button" class="btn btn-outline-primary mbtn" id="${retSearchedFlights[i]['fno']}"
-                    onClick = "finfo(this)"                    
-                    >Details</button>
-                    </div>                       
+                    `<div class ="col flex-col rtripretbtn" id="${retSearchedFlights[i]['fno']}">
+                    <button type="button" class="btn  mbtn viewdetails">Book</button>
+                    </div>                      
                 </div>
             </div>`
             $('#ret').append(ele);
         }
+        $(".rtripretbtn").click(function(e) {
+            retfid = $(this).attr("id");
+            retflightselected = true;
+            $("#r"+retfid).prop('checked',true)
+            if(goflightselected && retflightselected){
+                $(".sfilters").remove()
+                handlertripbooking()
+            }
+            else{
+                let ele = 
+                `<div class="alert alert-warning alert-dismissible fade show sfilters w-50 mt-5 " role="alert">
+                <strong>Select both go & return flights</strong>
+                <button type="button" class="close btn btn-outline cbtn" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>'
+                </div>`
+                $('#main').append(ele);
+            }                   
+         });
+         $(".retradio").click(function(e){
+            retflightselected = true;
+            radioid = $(this).attr("id");
+            retfid = radioid.substring(1);
+    
+         });    
 }
 
 function updateAllFilters(){
@@ -1992,12 +2186,17 @@ $(".fdelbtn").click(function(){
 
 })
 
-function finfo(e){
-    console.log(e)
-    console.log($(e).attr("id"))
+// function finfo(e){
+//     // console.log(e)
+//     id = $(e).attr("id")
+//     localStorage.setItem("fid",id)
+//     let a= document.createElement('a');
+//         a.target= '_blank';
+//         a.href= 'pages/roundtrip.html';
+//         a.click();
    
 
-}
+// }
 
 // function showFDeatils(e){
 //     let id = $(e).attr('id')
@@ -2006,6 +2205,28 @@ function finfo(e){
 // }
 
 
+function test(e){
+    console.log($(e).attr("id"))
+}
 
 
+function handlertripbooking(){
+       localStorage.setItem('gofid', gofid);
+       localStorage.setItem('retfid', retfid);
+       localStorage.setItem('fport', fromport); 
+       localStorage.setItem('tport', toport);
+       localStorage.setItem('children', +children);
+       localStorage.setItem('infants', +infants);
+       localStorage.setItem('adults', +adults);
+       localStorage.setItem('clstype', infoclass);
+       localStorage.setItem('fport', fromport);
+       localStorage.setItem('tport', toport);
+       localStorage.setItem('date1', JSON.stringify(fromdate));
+       localStorage.setItem('date2', JSON.stringify(todate));  
+       let b= document.createElement('a');
+           b.target= '_blank';
+           b.href= 'pages/roundtrip.html';
+           b.click();
+    
+}
 

@@ -5,6 +5,7 @@ body, html {
     margin: 0;
     font-size: 14px;
     font-weight: 400;
+    overflow-x: hidden;
 }
 .header{
     background-image: linear-gradient(to bottom, rgba(6,3,40), rgb(18,58,105)); 
@@ -38,37 +39,421 @@ body, html {
   
 
 }
+.l-box {
+    width: 380px;
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,.1);
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 10px;
+    margin-left: 40px;
+    margin-right: 10px;
+    position: relative;
+    top: -100px;
+}
 
-.l-box{
+#l-box1{
     background: white;
-    /* width: 680px; */
-    /* height: 200px; */
     box-shadow: 0 3px 30px 0 rgba(0,0,0,.1);
     border-radius: 2px;
-    color: blue;
-    margin-left: 40px;
-    margin-right: 20px;
-    position: relative;
-    top:-100px;
+    margin: 10px;
     padding: 10px;
 
 }
+
 .r-box{
     background: white;
-    /* width: 680px; */
-    /* height: 200px; */
-    box-shadow: 0 3px 30px 0 rgba(0,0,0,.1);
-  
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,.1); 
     border-radius: 2px;
-    color: blue;
     position: relative;
     top:-100px;
     padding: 10px;
     
+}
+.date-detail{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-content: center;
+}
+.date-duration{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
 
+}
+.date {
+    background-color:rgb(255, 237, 209);
+    padding: 4px 7px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-right: 10px;
+}
+.fdetail-policy{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-left: 4px solid #249995;
+        padding: 0 12px;
+}
+#duration{
+    background-color: white;
+    position:relative;
+    left: -40px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.refund{
+    border-radius: 2px;
+    background-image:linear-gradient(to right, rgb(45, 193, 140), rgb(33, 147, 147));
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 8px 10px;
+    height: 33px;
+    font-size: 10px;
+    border-radius: 4px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
 }
 .rcontent{
     display: flex;
     justify-content: space-between;
     color: black;
+}
+.rpolicy{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    
+}
+.faredetails{
+    margin-top: 10px;
+    color: #0091ff;
+    cursor: pointer;
+
+}
+#namelclass{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#fname{
+    font-size: 14px;
+    font-weight: 700;
+    align-self: center;
+    margin-left: 20px;
+}
+
+#fnamelogo{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 16px;
+   
+}
+
+#saver{
+    color: rgb(36, 153, 149);
+    font-size: 14px;
+}
+#timeplaceport{
+
+    background-color: #f4f4f4;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+
+}
+
+
+.circle {
+    border: 2px solid #979797;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    display: inline-flex;
+    background-color: #f4f4f4;
+    position: relative;
+    margin-left: 8px;
+    margin-right: 8px;
+    z-index: 1;
+}
+#srcdetails{
+    display: flex;
+    color: rgba(0,0,0,.85);
+}
+.time{
+    font-size: 14px;
+    font-weight: 900;
+    
+}
+
+.place{
+    font-size: 14px;
+    font-weight: 900;
+}
+.port{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.duration{
+    padding: 7px 20px;
+    margin-left:64px;
+    font-size: 14px;
+    font-weight: 400;
+    border-left: 3px dashed #979797;
+    margin-top: 5px;
+}
+.l-box2{
+    background-color: #f4f4f4;
+
+}
+.lboxfullrefund{
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,.1);
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 10px;
+    margin-left: 30px;
+    margin-right: -51px;
+    position: relative;
+    top: -80px;    
+}
+
+.freeinfo{
+    font-size: 16px;
+    font-weight: 900;
+    color: black;
+}
+.free{
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+}
+.freeknowmore{
+    color: rgb(0, 140, 255);
+    font-size: 14px;
+    font-weight: 400;
+}
+.mandinfo{
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,.1);
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 20px;
+    margin-left: 30px;
+    margin-right: -51px;
+    position: relative;
+    top: -60px;
+    
+
+}
+.mandinfo{
+    font-size: 12px;
+    font-weight: 400;
+    color: black;
+}
+
+.mandhead{
+    font-size: 14px;
+    font-weight: 900;
+    color: rgba(0,0,0,.85);
+}
+.anone{
+    cursor: pointer;
+}
+
+input[type="radio"]{
+    visibility: hidden;
+    background-color: #e5eef4;
+}
+
+.passengerdetails{
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,.1);
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 20px;
+    margin-left: 40px;
+    margin-right: -51px;
+    position: relative;
+    top: -40px;   
+}
+.pform,.cform{
+    display: flex;
+    padding: 13px;
+    border-bottom: 1px solid #eaeaea;
+
+}
+
+.travh{
+    font-weight: 900;
+}
+.name{
+        border-radius: 4px;
+        border: 1px solid hsla(0,0%,60.8%,.5);
+        padding: 10px;
+        width: 100%;
+        color: #4a4a4a;
+        outline: 0;    
+}
+input[type]:focus{
+    border:1px solid #007bff
+}
+
+.gender input[type=radio]:checked~.radiobox {
+    box-shadow: inset 0 -3px 0 #008cff;
+    background-color: #eaf5ff;
+    font-weight: 700;
+}
+
+.textinput input[type=text],input[type=tel],input[type=email]{
+        border-radius: 4px;
+        border: 1px solid hsla(0,0%,60.8%,.5);
+        padding: 10px;
+        width: 100%;
+        color: #4a4a4a;
+        outline: 0;    
+}
+.radiobox{  
+        text-align: center;
+        padding: 10px;
+        pointer-events: none;
+        font-size: 14px;
+        padding-left: 25px;
+        padding-right: 25PX;
+        border-radius: 4px 4px 0 0;    
+}
+#male{
+        border-right: 1px solid hsla(0,0%,60.8%,.5);
+        margin-left: -16px;
+        padding-right: 35px;
+        border-radius: 0;
+    
+}
+#female{
+    margin-left: -20px;
+}
+.gender{
+    border-radius: 4px;
+    border: 1px solid hsla(0,0%,60.8%,.5);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+}
+
+.contacthead{
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 900;
+    
+}
+.contactdetails{
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,.1);
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 20px;
+    margin-left: 40px;
+    margin-right: -51px;
+    position: relative;
+    top: -20px;   
+}
+#email{
+    margin-left: 10px;
+}
+#continue{
+    padding: 10px 35px;
+    height: 44px;
+    background-image: linear-gradient(97deg,#53b2fe,#065af3 130%);
+    font-size: 16px;
+    font-weight: 900;
+    display: flex;
+    border-radius: 35px;
+    box-shadow: 0 1px 7px 0 rgba(0,0,0,.22);
+    cursor: pointer;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    height: 47px;
+    padding: 0 20px;
+    border: none;
+    outline: none!important;
+    width: 150px;
+    margin-left: 40px;
+    margin-bottom: 100px;
+    
+    
+}
+
+.fareRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color:#4a4a4a;
+ 
+}
+.farewrapper{
+    border-bottom: 1px solid #dfdfdf;
+    padding: 10px 0;
+}
+#fareicon{
+    margin-right: 8px;
+    margin-top: 15px;
+    cursor: pointer;
+    color:#4a4a4a;
+}
+#chargeicon,#charityicon{
+    margin-right: 8px;
+    margin-top: 15px;
+    cursor: pointer;
+    color:#4a4a4a;
+}
+.pointer{
+    cursor: pointer;
+}
+.fareheader{
+    font-size: 14px;
+    font-weight: 700;
+ 
+}
+
+#basefare{
+    position: relative;
+    top:-8px;
+}
+#chargehead{
+    position: relative;
+    top:-10px
+}
+#charityhead{
+    position: relative;
+    top:-8px
+}
+#pricecalc{
+    margin-left: 38px;
+}
+#chargecalc,#charitycalc{
+    margin-left: 38px;
+}
+.farefooter{
+    padding: 15px 0 0;
+    border-top: 1px solid #000;
+    font-size: 16px;
+    font-weight: 900;
+    font-family: 'Lato',sans-serif;
+}
+
+.errormsg{
+    color: #eb2026;
+    padding-top: 3px;
+    font-size: 12px;
 }
