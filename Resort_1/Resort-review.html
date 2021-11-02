@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/Resort-review_style.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <script src="https://kit.fontawesome.com/620f8343e2.js" crossorigin="anonymous"></script>
+    <title>review your booking</title>
+</head>
+
+<body>
+    <div data-cy="landingContainer" class="singleHeader  ">
+        <div class="headerOuter">
+            <div class="chHeaderWrapper     ">
+                <div class="chHeaderContainer">
+                    <div class="chHeaderContainer">
+                        <nav class>
+                            <ul class="makeFlex font12">
+                                <li>
+                                    <span class="tname">Travelio</span>
+                                </li>
+                                <li data-cy="menu_Flights" class="menu_Flights ">
+                                    <a href="" class=" makeFlex hrtlCenter column">
+                                        <div class="icon">
+                                            <i class="fas fa-plane-departure" aria-hidden="true"></i>
+                                        </div>
+                                        <span class="chNavIcon appendBottom2 chSprite chFlights "></span>
+                                        <span class="chNavText darkGreyText">Flights</span>
+                                    </a>
+                                </li>
+                                <li data-cy="menu_Hotels" class="menu_Hotels ">
+                                    <a href="" class=" makeFlex hrtlCenter column">
+                                        <div class="icon">
+                                            <i class="fas fa-hotel" aria-hidden="true"></i>
+                                        </div>
+                                        <span class="chNavIcon appendBottom2 chSprite chHotels "></span>
+                                        <span class="chNavText darkGreyText">Hotels</span>
+                                    </a>
+                                </li>
+                                <li data-cy="menu_Villasmore" class="menu_Villasmore ">
+                                    <a href="" class="active makeFlex hrtlCenter column">
+                                        <div class="icon">
+                                            <i class="fas fa-bed" aria-hidden="true"></i>
+                                        </div>
+                                        <span class="chNavIcon appendBottom2 chSprite chHomestays active"></span>
+                                        <span class="chNavText darkGreyText"> Resorts</span>
+                                    </a>
+                                </li>
+                                <li data-cy="menu_Holidays" class="removeItemMargin menu_Holidays ">
+                                    <a href="" class=" makeFlex hrtlCenter column">
+                                        <div class="icon">
+                                            <i class="fas fa-umbrella-beach" aria-hidden="true"></i>
+                                        </div>
+                                        <span class="chNavIcon appendBottom2 chSprite chHolidays "></span>
+                                        <span class="chNavText darkGreyText">Holiday Packages</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="rvwNew">
+            <div class="rvHeader minWidth1200">
+                <div class="rvHeader__inner">
+                    <p class="rvHeader__heading">Review your Booking</p>
+                </div>
+            </div>
+            <div class="reviewContainer">
+                <div class="reviewContainer__left">
+                    <div class="htlInfoContainer appendBottom20">
+                        <div class="accordHead">
+                            <div>
+                                <p class="accordHead__text">
+                                    <span class="capText">Hotel Information</span>
+                                </p>
+                            </div>
+                            <div>
+                                <span class="accordBtn appendLeft20 up">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="htlInfo__wrapper" id="htlInfo__wrapper">
+                            <!-- getting data using java script object -->
+                        </div>
+                        <div class="htlInfo__content">
+                            <div class="rmDtl appendBottom15">
+                                <div class="roomDtlCard">
+                                    <div class="roomDtlCard__head">
+                                        <div>
+                                            <p class="latoBlack font14 blackText capText">King Room with Plaza Graden View</p>
+                                            <p class="grayText appendTop5">2 Adults</p>
+                                        </div>
+                                    </div>
+                                    <div class="roomDtlCard__content">
+                                        <p class="font16 latoBold blackText appendBottom10">Price Includes</p>
+                                        <div class="appendTop10 appendBottom10">
+                                            <div class="makeFlex hrtlCenter"><span class="roomDtlCard__listIcon"><span
+                                                        class="sprite blackDot"></span></span>
+                                                <div>
+                                                    <span class="font16">
+                                                        Bed Only.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="appendTop10 appendBottom10">
+                                            <div class="makeFlex hrtlCenter"><span class="roomDtlCard__listIcon"><span
+                                                        class="sprite blackDot"></span></span>
+                                                <div><span class="redText">Non-Refundable</span><span class="font12"> |
+                                                        On Cancellation, You will not get any refund.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="impInfoCard appendTop15">
+                                <div class="impInfoCard__head">Important information</div>
+                                <div class="impInfoCard__details">
+                                    <p class="latoBlack font14 blackText appendBottom12">Hostel Rules</p>
+                                    <div class="appendTop5 appendBottom5">
+                                        <div class="makeFlex hrtlCenter">
+                                            <span class="impInfoCard__listIcon">
+                                                <span class="blackDot"></span>
+                                            </span>
+                                            <div>
+                                                <span class="font12">
+                                                    Guests with fever are not allowed.
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="appendTop5 appendBottom5">
+                                        <div class="makeFlex hrtlCenter">
+                                            <span class="impInfoCard__listIcon">
+                                                <span class="blackDot"></span>
+                                            </span>
+                                            <div>
+                                                <span class="font12">
+                                                    Guests from containment zones are not allowed.
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="appendTop5 appendBottom5">
+                                        <div class="makeFlex hrtlCenter">
+                                            <span class="impInfoCard__listIcon">
+                                                <span class="blackDot"></span>
+                                            </span>
+                                            <div>
+                                                <span class="font12">
+                                                    Unmarried couples are not allowed.
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="appendTop5 appendBottom5">
+                                        <div class="makeFlex hrtlCenter">
+                                            <span class="impInfoCard__listIcon">
+                                                <span class="blackDot"></span>
+                                            </span>
+                                            <div>
+                                                <span class="font12">
+                                                    Children are not allowed at the property.
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="guestDtls appendBottom20">
+                            <div class="accordHead">
+                                <div>
+                                    <p class="accordHead__text"><span class="capText">GUEST DETAILS</span> </p>
+                                </div>
+                                <div><span class="accordBtn appendLeft20 up"></span></div>
+                            </div>
+                            <div class="guestDtls__content">
+                                <form>
+                                    <h4 class="font16 latoBold blackText appendBottom20">I’m booking for</h4>
+                                    <div class="makeFlex appendBottom30">
+                                        <div class="appendRight20"><span class="radioOuter"><input type="radio"
+                                                    name="selfBooking" id="myself" value="no"><label
+                                                    class="font14 latoBold" for="myself">Myself</label></span></div>
+                                        <div><span class="radioOuter"><input type="radio" name="selfBooking"
+                                                    id="someone" value="yes"><label class="font14 latoBold"
+                                                    for="someone">Someone Else</label></span></div>
+                                    </div>
+                                    <div class="guestDtls__row">
+                                        <div class="makeFlex">
+                                            <div class="guestDtls__col width70 appendRight10">
+                                                <p class="font11 capText appendBottom10">Title</p>
+                                                <div class="frmSelectCont"><select id="title" class="frmSelect">
+                                                        <option value="Mr">Mr</option>
+                                                        <option value="Mrs">Mrs</option>
+                                                        <option value="Ms">Ms</option>
+                                                    </select></div>
+                                            </div>
+                                            <div class="makeFlex column flexOne">
+                                                <div class="makeFlex">
+                                                    <div class="guestDtls__col width247 appendRight10">
+                                                        <div class="textFieldCol ">
+                                                            <p class="font11 appendBottom10 guestDtlsTextLbl"><span class="capText">FULL NAME</span></p><input type="text" id="fName" name="fName" class="frmTextInput " placeholder="First Name" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="guestDtls__col width247">
+                                                        <div class="textFieldCol ">
+                                                            <p class="font11 appendBottom10 guestDtlsTextLbl"><span class="capText"></span></p><input type="text" id="lName" name="lName" class="frmTextInput " placeholder="Last Name" value="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="guestDtls__row">
+                                        <div class="makeFlex">
+                                            <div class="guestDtls__col width327 appendRight10">
+                                                <div class="textFieldCol ">
+                                                    <p class="font11 appendBottom10 guestDtlsTextLbl"><span class="capText">Email Address</span><span class="grayText appendLeft3">(Booking voucher will be sent
+                                                            to this email ID)</span></p><input type="text" id="email" name="email" class="frmTextInput " placeholder="Email ID" value="">
+                                                </div>
+                                            </div>
+                                            <div class="guestDtls__col width327">
+                                                <p class="font11 capText appendBottom10">Mobile Number</p>
+                                                <div class="makeFlex textLtr">
+                                                    <div class="guestDtls__contact"><label for="mCode" class=" frmSelectCont__contact"><select name="" id="mCode"
+                                                                class="frmSelect frmSelectContact">
+                                                                <option value="+93">Afghanistan (+93)</option>
+                                                                <option value="+213">Algeria (+213)</option>
+                                                                <option value="+1684">American Samoa (+1684)</option>
+                                                                <option value="+376">Andorra (+376)</option>
+                                                                <option value="+244">Angola (+244)</option>
+                                                                <option value="+1264">Anguilla (+1264)</option>
+                                                                <option value="+672">Antarctica (+672)</option>
+                                                                <option value="+1268">Antigua and Barbuda (+1268)
+                                                                </option>
+                                                                <option value="+54">Argentina (+54)</option>
+                                                                <option value="+374">Armenia (+374)</option>
+                                                                <option value="+297">Aruba (+297)</option>
+                                                                <option value="+61">Australia (+61)</option>
+                                                                <option value="+43">Austria (+43)</option>
+                                                                <option value="+994">Azerbaijan (+994)</option>
+                                                                <option value="+1242">Bahamas (+1242)</option>
+                                                                <option value="+973">Bahrain (+973)</option>
+                                                                <option value="+880">Bangladesh (+880)</option>
+                                                                <option value="+1246">Barbados (+1246)</option>
+                                                                <option value="+32">Belgium (+32)</option>
+                                                                <option value="+501">Belize (+501)</option>
+                                                                <option value="+229">Benin (+229)</option>
+                                                                <option value="+1441">Bermuda (+1441)</option>
+                                                                <option value="+975">Bhutan (+975)</option>
+                                                                <option value="+591">Bolivia (+591)</option>
+                                                                <option value="+267">Botswana (+267)</option>
+                                                                <option value="+55">Brazil (+55)</option>
+                                                                <option value="+246">British Indian Ocean Territory
+                                                                    (+246)</option>
+                                                                <option value="+1284">British Virgin Islands (+1284)
+                                                                </option>
+                                                                <option value="+673">Brunei (+673)</option>
+                                                                <option value="+226">Burkina Faso (+226)</option>
+                                                                <option value="+257">Burundi (+257)</option>
+                                                                <option value="+855">Cambodia (+855)</option>
+                                                                <option value="+237">Cameroon (+237)</option>
+                                                                <option value="+1">Canada (+1)</option>
+                                                                <option value="+238">Cape Verde (+238)</option>
+                                                                <option value="+1345">Cayman Islands (+1345)</option>
+                                                                <option value="+236">Central African Republic (+236)
+                                                                </option>
+                                                                <option value="+235">Chad (+235)</option>
+                                                                <option value="+56">Chile (+56)</option>
+                                                                <option value="+86">China (+86)</option>
+                                                                <option value="+61">Christmas Island (+61)</option>
+                                                                <option value="+61">Cocos Islands (+61)</option>
+                                                                <option value="+57">Colombia (+57)</option>
+                                                                <option value="+269">Comoros (+269)</option>
+                                                                <option value="+682">Cook Islands (+682)</option>
+                                                                <option value="+506">Costa Rica (+506)</option>
+                                                                <option value="+599">Curacao (+599)</option>
+                                                                <option value="+357">Cyprus (+357)</option>
+                                                                <option value="+420">Czech Republic (+420)</option>
+                                                                <option value="+45">Denmark (+45)</option>
+                                                                <option value="+253">Djibouti (+253)</option>
+                                                                <option value="+1767">Dominica (+1767)</option>
+                                                                <option value="+18">Dominican Republic (+18)</option>
+                                                                <option value="+670">East Timor (+670)</option>
+                                                                <option value="+593">Ecuador (+593)</option>
+                                                                <option value="+20">Egypt (+20)</option>
+                                                                <option value="+503">El Salvador (+503)</option>
+                                                                <option value="+240">Equatorial Guinea (+240)</option>
+                                                                <option value="+291">Eritrea (+291)</option>
+                                                                <option value="+372">Estonia (+372)</option>
+                                                                <option value="+251">Ethiopia (+251)</option>
+                                                                <option value="+500">Falkland Islands (+500)</option>
+                                                                <option value="+298">Faroe Islands (+298)</option>
+                                                                <option value="+679">Fiji (+679)</option>
+                                                                <option value="+358">Finland (+358)</option>
+                                                                <option value="+33">France (+33)</option>
+                                                                <option value="+689">French Polynesia (+689)</option>
+                                                                <option value="+241">Gabon (+241)</option>
+                                                                <option value="+220">Gambia (+220)</option>
+                                                                <option value="+995">Georgia (+995)</option>
+                                                                <option value="+49">Germany (+49)</option>
+                                                                <option value="+233">Ghana (+233)</option>
+                                                                <option value="+350">Gibraltar (+350)</option>
+                                                                <option value="+30">Greece (+30)</option>
+                                                                <option value="+299">Greenland (+299)</option>
+                                                                <option value="+1473">Grenada (+1473)</option>
+                                                                <option value="+1671">Guam (+1671)</option>
+                                                                <option value="+502">Guatemala (+502)</option>
+                                                                <option value="+441481">Guernsey (+441481)</option>
+                                                                <option value="+224">Guinea (+224)</option>
+                                                                <option value="+245">Guinea-Bissau (+245)</option>
+                                                                <option value="+592">Guyana (+592)</option>
+                                                                <option value="+509">Haiti (+509)</option>
+                                                                <option value="+504">Honduras (+504)</option>
+                                                                <option value="+852">Hong Kong (+852)</option>
+                                                                <option value="+36">Hungary (+36)</option>
+                                                                <option value="+354">Iceland (+354)</option>
+                                                                <option value="+91">India (+91)</option>
+                                                                <option value="+62">Indonesia (+62)</option>
+                                                                <option value="+353">Ireland (+353)</option>
+                                                                <option value="+441624">Isle of Man (+441624)</option>
+                                                                <option value="+972">Israel (+972)</option>
+                                                                <option value="+39">Italy (+39)</option>
+                                                                <option value="+1876">Jamaica (+1876)</option>
+                                                                <option value="+81">Japan (+81)</option>
+                                                                <option value="+441534">Jersey (+441534)</option>
+                                                                <option value="+962">Jordan (+962)</option>
+                                                                <option value="+7">Kazakhstan (+7)</option>
+                                                                <option value="+254">Kenya (+254)</option>
+                                                                <option value="+686">Kiribati (+686)</option>
+                                                                <option value="+965">Kuwait (+965)</option>
+                                                                <option value="+996">Kyrgyzstan (+996)</option>
+                                                                <option value="+856">Laos (+856)</option>
+                                                                <option value="+371">Latvia (+371)</option>
+                                                                <option value="+266">Lesotho (+266)</option>
+                                                                <option value="+423">Liechtenstein (+423)</option>
+                                                                <option value="+370">Lithuania (+370)</option>
+                                                                <option value="+352">Luxembourg (+352)</option>
+                                                                <option value="+853">Macau (+853)</option>
+                                                                <option value="+389">Macedonia (+389)</option>
+                                                                <option value="+261">Madagascar (+261)</option>
+                                                                <option value="+265">Malawi (+265)</option>
+                                                                <option value="+60">Malaysia (+60)</option>
+                                                                <option value="+960">Maldives (+960)</option>
+                                                                <option value="+223">Mali (+223)</option>
+                                                                <option value="+356">Malta (+356)</option>
+                                                                <option value="+692">Marshall Islands (+692)</option>
+                                                                <option value="+222">Mauritania (+222)</option>
+                                                                <option value="+230">Mauritius (+230)</option>
+                                                                <option value="+262">Mayotte (+262)</option>
+                                                                <option value="+52">Mexico (+52)</option>
+                                                                <option value="+691">Micronesia (+691)</option>
+                                                                <option value="+377">Monaco (+377)</option>
+                                                                <option value="+976">Mongolia (+976)</option>
+                                                                <option value="+1664">Montserrat (+1664)</option>
+                                                                <option value="+212">Morocco (+212)</option>
+                                                                <option value="+258">Mozambique (+258)</option>
+                                                                <option value="+95">Myanmar (+95)</option>
+                                                                <option value="+264">Namibia (+264)</option>
+                                                                <option value="+674">Nauru (+674)</option>
+                                                                <option value="+977">Nepal (+977)</option>
+                                                                <option value="+31">Netherlands (+31)</option>
+                                                                <option value="+599">Netherlands Antilles (+599)
+                                                                </option>
+                                                                <option value="+687">New Caledonia (+687)</option>
+                                                                <option value="+64">New Zealand (+64)</option>
+                                                                <option value="+505">Nicaragua (+505)</option>
+                                                                <option value="+227">Niger (+227)</option>
+                                                                <option value="+234">Nigeria (+234)</option>
+                                                                <option value="+683">Niue (+683)</option>
+                                                                <option value="+1670">Northern Mariana Islands (+1670)
+                                                                </option>
+                                                                <option value="+47">Norway (+47)</option>
+                                                                <option value="+968">Oman (+968)</option>
+                                                                <option value="+92">Pakistan (+92)</option>
+                                                                <option value="+680">Palau (+680)</option>
+                                                                <option value="+970">Palestine (+970)</option>
+                                                                <option value="+507">Panama (+507)</option>
+                                                                <option value="+675">Papua New Guinea (+675)</option>
+                                                                <option value="+595">Paraguay (+595)</option>
+                                                                <option value="+51">Peru (+51)</option>
+                                                                <option value="+63">Philippines (+63)</option>
+                                                                <option value="+64">Pitcairn (+64)</option>
+                                                                <option value="+48">Poland (+48)</option>
+                                                                <option value="+351">Portugal (+351)</option>
+                                                                <option value="+1">Puerto Rico (+1)</option>
+                                                                <option value="+974">Qatar (+974)</option>
+                                                                <option value="+262">Reunion (+262)</option>
+                                                                <option value="+7">Russia (+7)</option>
+                                                                <option value="+250">Rwanda (+250)</option>
+                                                                <option value="+590">Saint Barthelemy (+590)</option>
+                                                                <option value="+290">Saint Helena (+290)</option>
+                                                                <option value="+1869">Saint Kitts and Nevis (+1869)
+                                                                </option>
+                                                                <option value="+1758">Saint Lucia (+1758)</option>
+                                                                <option value="+590">Saint Martin (+590)</option>
+                                                                <option value="+508">Saint Pierre and Miquelon (+508)
+                                                                </option>
+                                                                <option value="+1784">Saint Vincent and the Grenadines
+                                                                    (+1784)</option>
+                                                                <option value="+685">Samoa (+685)</option>
+                                                                <option value="+378">San Marino (+378)</option>
+                                                                <option value="+239">Sao Tome and Principe (+239)
+                                                                </option>
+                                                                <option value="+966">Saudi Arabia (+966)</option>
+                                                                <option value="+221">Senegal (+221)</option>
+                                                                <option value="+248">Seychelles (+248)</option>
+                                                                <option value="+232">Sierra Leone (+232)</option>
+                                                                <option value="+65">Singapore (+65)</option>
+                                                                <option value="+1721">Sint Maarten (+1721)</option>
+                                                                <option value="+421">Slovakia (+421)</option>
+                                                                <option value="+677">Solomon Islands (+677)</option>
+                                                                <option value="+252">Somalia (+252)</option>
+                                                                <option value="+82">South Korea (+82)</option>
+                                                                <option value="+211">South Sudan (+211)</option>
+                                                                <option value="+94">Sri Lanka (+94)</option>
+                                                                <option value="+47">Svalbard and Jan Mayen (+47)
+                                                                </option>
+                                                                <option value="+268">Swaziland (+268)</option>
+                                                                <option value="+46">Sweden (+46)</option>
+                                                                <option value="+41">Switzerland (+41)</option>
+                                                                <option value="+886">Taiwan (+886)</option>
+                                                                <option value="+992">Tajikistan (+992)</option>
+                                                                <option value="+255">Tanzania (+255)</option>
+                                                                <option value="+66">Thailand (+66)</option>
+                                                                <option value="+228">Togo (+228)</option>
+                                                                <option value="+690">Tokelau (+690)</option>
+                                                                <option value="+676">Tonga (+676)</option>
+                                                                <option value="+1868">Trinidad and Tobago (+1868)
+                                                                </option>
+                                                                <option value="+216">Tunisia (+216)</option>
+                                                                <option value="+90">Turkey (+90)</option>
+                                                                <option value="+993">Turkmenistan (+993)</option>
+                                                                <option value="+1649">Turks and Caicos Islands (+1649)
+                                                                </option>
+                                                                <option value="+688">Tuvalu (+688)</option>
+                                                                <option value="+1340">U.S. Virgin Islands (+1340)
+                                                                </option>
+                                                                <option value="+256">Uganda (+256)</option>
+                                                                <option value="+380">Ukraine (+380)</option>
+                                                                <option value="+971">United Arab Emirates (+971)
+                                                                </option>
+                                                                <option value="+44">United Kingdom (+44)</option>
+                                                                <option value="+1">United States (+1)</option>
+                                                                <option value="+598">Uruguay (+598)</option>
+                                                                <option value="+998">Uzbekistan (+998)</option>
+                                                                <option value="+678">Vanuatu (+678)</option>
+                                                                <option value="+379">Vatican (+379)</option>
+                                                                <option value="+58">Venezuela (+58)</option>
+                                                                <option value="+84">Vietnam (+84)</option>
+                                                                <option value="+681">Wallis and Futuna (+681)</option>
+                                                                <option value="+212">Western Sahara (+212)</option>
+                                                                <option value="+967">Yemen (+967)</option>
+                                                                <option value="+260">Zambia (+260)</option>
+                                                            </select></label><span class="selectedCode">+91</span></div>
+                                                    <div class="flexOne">
+                                                        <div class="textFieldCol "><input type="text" id="mNo" name="mNo" class="frmTextInput noLeftBorder" placeholder="Contact Number" value=""></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tncCard appendBottom15">
+                        <p class="font12 lineHight16">By proceeding, I agree to MakeMyTrip’s <a rel="noopener noreferrer" target="_blank" href="">User
+                                Agreement</a>, <a rel="noopener noreferrer" target="_blank" href="">Terms of
+                                Service</a> and
+                            <a href="javascript:void(0);">Cancellation &amp; Property Booking Policies</a>.
+                        </p>
+                    </div>
+                    <div class="makeFlex hrtlCenter ">
+                        <div class=""><a class="btnContinueeePayment primaryBtn capText">Pay Now</a>
+                            <div class="cstmTooltip top  " style="width: 200px; height: auto; position: absolute; background-color: rgb(0, 0, 0); border-radius: 4px; padding: 16px; border-width: 0px; border-style: initial; border-image: initial; top: 40px; left: 55px; z-index: 2;">
+                                <p class="whiteText lineHeight18">Your organisation does not allow to book out of policy bookings.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reviewContainer__right">
+                    <div class="makeRelative" id="price_section">
+
+                    </div>
+                    <div class="makeRelative">
+                        <div class="dlCodes appendBottom20">
+                            <p class="latoBlack font14 capText appendBottom15 blackText">Deal Codes</p>
+                            <div class="cpnCont ">
+                                <div class="cpnInput"><input type="text" placeholder="Have a Coupon Code" value="">
+                                    <a class="cpnInput__btn">
+                                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="./js/Resort-Data.js"></script>
+    <script src="./js/Resort-review.js"></script>
+</body>
+
+</html>

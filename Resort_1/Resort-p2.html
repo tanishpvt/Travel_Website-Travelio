@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0493c978ee.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/responsive-tabs@1.6.3/css/responsive-tabs.css">
+    <title>Resort Details</title>
+    <link rel="stylesheet" href="css/Resort-p2_style.css">
+    <style>
+        /* .my-container{
+            border:2px solid black ;
+        }
+        .my-row{
+            border: 2px solid green;
+        
+        }
+        .my-col{
+            border: 2px solid red;
+        } */
+    </style>
+</head>
+
+<body>
+    <section class="booking">
+        <div class="container my-container">
+            <div class="row my-row">
+                <div class="col my-col">
+                    <form action="" class="bk-form" id="page2-form">
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="gallery">
+        <div class="container my-container">
+            <div class="abc">
+                <div class="row my-row">
+                    <div class="col-lg-9 my-col">
+                        <div class="video-container">
+                            <!-- here the soure will be filled by the dom -->
+                            <video class="vid-size" src="" controls id="hotel1_id"></video>
+                        </div>
+                    </div>
+                    <div class="col my-col" id="hotel1_images-container">
+                        <!-- here the images will be filled by the dom -->
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container my-container">
+            <div class="row my-row">
+                <div class="col-lg-9 my-col">
+                    <div class="booking-card">
+                        <div id="booking_details" class="booking-div py-3 px-4 d-sm-flex align-items-center justify-content-between">
+                            <!-- this is use in DOM model in hotel1 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 my-col">
+                    <div class="map-container">
+                        <iframe class="map-size iframe_location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.0833978161563!2d72.86754391432777!3d19.10399695605758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8412eabd40d%3A0x24090700409101ee!2sITC%20Maratha%2C%20a%20Luxury%20Collection%20Hotel%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1630336205578!5m2!1sen!2sin"
+                            width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="details">
+        <!-- <div class="container"> -->
+        <div id="services-02">
+            <div class="content-box-md">
+                <div id="services-tabs">
+                    <br><br><br>
+                    <ul class="text-center un-list">
+                        <li><a class="li_center" href="#service-tab-1">Overview</a></li>
+                        <li><a class="li_center" href="#service-tab-2">Location</a></li>
+                        <li><a class="li_center" href="#service-tab-3">Facilities</a></li>
+                        <li><a class="li_center" href="#service-tab-4">Property Rules</a></li>
+                        <li><a class="li_center" href="#service-tab-5">User Reviews</a></li>
+                    </ul>
+                    <br>
+                    <div id="service-tab-1" class="service-tab">
+                        <div class="container tab-con">
+                            <div class="row my-row">
+                                <div class="col my-col">
+                                    <div class="tab-bg">
+                                        <h2>About Holiday In Resort</h2>
+                                        <h3>A splendid vacation, Holiday in resort</h3>
+                                        <div class="points">
+                                            <p>
+                                                <ol>
+                                                    <li class="li-style"><span> The rooms offer a plethora of
+                                                        views,including views of lush green gardens, the pool and the
+                                                        Arabian Sea.</span></li>
+                                                    <li class="li-style"><span> popular beach, Mobor Beach is located just
+                                                        300 m away from the resort.</span></li>
+                                                    <li class="li-style"><span> The resort offers a variety of recreational
+                                                        sports including aqua zorbing and other outdoor games.</span>
+                                                    </li>
+                                                    <li class="li-style"><span> Enjoy dining by the pool on Mediterranean
+                                                        cuisine at the in-house restaurant, Fig and Olive.</span></li>
+                                                </ol>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="service-tab-2" class="service-tab">
+                        <div class="container">
+                            <div class="row my-row">
+                                <div class="col my-col">
+                                    <div class="tab-bg">
+                                        <h2>Location</h2>
+                                        <h3>The Location of Holiday In Resort has been rated 4.6 by 815 guests</h3>
+                                        <div class="map-container">
+                                            <iframe class="map-size iframe_location" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="service-tab-3" class="service-tab">
+                        <div class="container">
+                            <div class="row my-row">
+                                <div class="col my-col">
+                                    <div class="tab-bg">
+                                        <h2>Facilities</h2>
+                                        <h3>Facilities at Holiday Inn Resort</h3>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="fac-det">
+                                                    <h3>Safety and Hygiene</h3>
+                                                    <ol>
+                                                        <li class="li-style"><span>Maska</span></li>
+                                                        <li class="li-style"><span>Gloves</span></li>
+                                                        <li class="li-style"><span>Sanitizers</span></li>
+                                                        <li class="li-style"><span>Sanitizers installed</span></li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="fac-det">
+                                                    <h3>Basic Facilities</h3>
+                                                    <ol>
+                                                        <li class="li-style"><span>Free Wi-Fi</span></li>
+                                                        <li class="li-style"><span>Elevator/Lift</span></li>
+                                                        <li class="li-style"><span>Air Conditioning</span></li>
+                                                        <li class="li-style"><span>24-Hour-Room Service</span></li>
+                                                        </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="fac-det">
+                                                    <h3>Transfers</h3>
+                                                    <ol>
+                                                        <li class="li-style"><span>Paid Airport Transfers</span></li>
+                                                        <li class="li-style"><span>Paid Pickup/Drop</span></li>
+                                                        <li class="li-style"><span>Paid Shuttle Service</span></li>
+                                                        <li class="li-style"><span>Paid Railway Transfers</span></li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="fac-det">
+                                                    <h3>Family and Kids</h3>
+                                                    <ol>
+                                                        <li class="li-style"><span>Kids Play Area</span></li>
+                                                        <li class="li-style"><span>Chilcare services</span></li>
+                                                        <li class="li-style"><span>Playground</span></li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="fac-det">
+                                                    <h3>Food and Drinks</h3>
+                                                    <ol>
+                                                        <li class="li-style"><span>Bar</span></li>
+                                                        <li class="li-style"><span>Cafe</span></li>
+                                                        <li class="li-style"><span>Restaurant</span></li>
+                                                        <li class="li-style"><span>Coffee Shop</span></li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="service-tab-4" class="service-tab">
+                        <div class="container">
+                            <div class="row my-row">
+                                <div class="col my-col">
+                                    <div class="tab-bg">
+                                        <h2>Property rule</h2>
+                                        <h3>Check-in:<span id="hot-time">3PM</span>check-out:<span id="hot-time">12PM</span></h3>
+                                        <div class="points">
+                                            <p>
+                                                <ol>
+                                                    <li class="li-style"><span> Suitale for children.</span></li>
+                                                    <li class="li-style"><span> Pets are not allowed.</span></li>
+                                                </ol>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="service-tab-5" class="service-tab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="tab-bg">
+                                        <h2>Reviews</h2>
+                                        <h3>User review</h3>
+                                        <div class="testimonial-box-container">
+                                            <div class="testimonial-box">
+                                                <div class="box-top">
+                                                    <div class="profile">
+                                                        <div class="profile-img">
+                                                            <img src="./Images/icon1" alt="">
+                                                        </div>
+                                                        <div class="name-user">
+                                                            <strong>Touseeq Ijaz</strong>
+                                                            <span>@touseeqijazweb</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reviews">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="client-comment">
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum alias ipsum explicabo vero, reiciendis atque labore fugit pariatur dolore quas cum itaque eligendi, esse doloribus, non error molestias
+                                                        autem ratione.</p>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial-box">
+                                                <div class="box-top">
+                                                    <div class="profile">
+                                                        <div class="profile-img">
+                                                            <img src="./Images/icon2" alt="">
+                                                        </div>
+                                                        <div class="name-user">
+                                                            <strong>Touseeq Ijaz</strong>
+                                                            <span>@touseeqijazweb</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reviews">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="client-comment">
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum alias ipsum explicabo vero, reiciendis atque labore fugit pariatur dolore quas cum itaque eligendi, esse doloribus, non error molestias
+                                                        autem ratione.</p>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial-box">
+                                                <div class="box-top">
+                                                    <div class="profile">
+                                                        <div class="profile-img">
+                                                            <img src="./Images/icon3" alt="">
+                                                        </div>
+                                                        <div class="name-user">
+                                                            <strong>Touseeq Ijaz</strong>
+                                                            <span>@touseeqijazweb</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reviews">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="client-comment">
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum alias ipsum explicabo vero, reiciendis atque labore fugit pariatur dolore quas cum itaque eligendi, esse doloribus, non error molestias
+                                                        autem ratione.</p>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial-box">
+                                                <div class="box-top">
+                                                    <div class="profile">
+                                                        <div class="profile-img">
+                                                            <img src="./Images/icon1" alt="">
+                                                        </div>
+                                                        <div class="name-user">
+                                                            <strong>Touseeq Ijaz</strong>
+                                                            <span>@touseeqijazweb</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reviews">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="client-comment">
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum alias ipsum explicabo vero, reiciendis atque labore fugit pariatur dolore quas cum itaque eligendi, esse doloribus, non error molestias
+                                                        autem ratione.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/responsive-tabs@1.6.3/js/jquery.responsiveTabs.min.js"></script>
+    <script src="./js/Resort-Data.js"></script>
+    <script src="./js/Resort-Details.js"></script>
+</body>
+
+</html>
