@@ -1,6 +1,6 @@
 const hotels = [
   {
-    id:1,
+    id:0,
     name: "ITC Maratha",
     price: 4104,
     details:
@@ -18,7 +18,7 @@ const hotels = [
     ],
   },
   {
-    id:2,
+    id:1,
     name: "The Oberoi",
     price: 12107,
     details:
@@ -36,7 +36,7 @@ const hotels = [
     ],
   },
   {
-    id:3,
+    id:2,
     name: "Trident Bandra",
     price: 5730,
     details:
@@ -54,7 +54,7 @@ const hotels = [
     ],
   },
   { 
-    id:4,
+    id:3,
     name: "Taj , Santacruz",
     price: 5787,
     details:
@@ -72,7 +72,7 @@ const hotels = [
     ],
   },
   { 
-    id:5,
+    id:4,
     name: "Sofitel Mumbai",
     price: 3920,
     details:
@@ -90,7 +90,7 @@ const hotels = [
     ],
   },
   { 
-    id:6,
+    id:5,
     name: "ITC Grand Central",
     price: 5656,
     details:
@@ -108,7 +108,7 @@ const hotels = [
     ],
   },
   { 
-    id:7,
+    id:6,
     name: "Trident Nariman Point",
     price: 6582,
     details:
@@ -126,7 +126,7 @@ const hotels = [
     ],
   },
   { 
-    id:8,
+    id:7,
     name: "Taj Lands End",
     price: 6954,
     details:
@@ -144,7 +144,7 @@ const hotels = [
     ],
   },
   { 
-    id:9,
+    id:8,
     name: "Novetel ",
     price: 3696,
     details:
