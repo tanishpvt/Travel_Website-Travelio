@@ -44,6 +44,8 @@ document.getElementById('form').addEventListener('submit', (e) => {
     alert("Successfully Signed Up");
     console.log("sent");
     document.getElementById('form').reset();
+    // window.open("/EDITPROFILE/index.html","_self");
+   
 });
 function  getId(id){
     return document.getElementById(id).value;
